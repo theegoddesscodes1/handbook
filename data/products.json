@@ -4,8 +4,8 @@
   "site": {
     "name": "The Handbook",
     "contactUrl": "https://lilacdesk.com/pages/contact",
-    "licenseUrl": "",
-    "refundsUrl": "",
+    "licenseUrl": "https://lilacdesk.com/pages/license",
+    "refundsUrl": "https://lilacdesk.com/policies/refund-policy",
     "shopUrl": "https://lilacdesk.com",
     "supportEmail": "support@lilacdesk.com",
     "cheatSheetUrl": "downloads/troubleshooting-cheat-sheet.pdf",
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "handle": "the-archive-undated",
+      "handle": "minimal-plans-undated",
       "name": "The Archive",
       "edition": "Undated",
       "type": "planner",
