@@ -77,8 +77,9 @@
   function loadState() {
     var handle = qs('p');
     var visible = D.products.filter(function (p) { return !p.hidden; });
-    var find = function (h) { return D.products.filter(function (p) { return p.handle === h && !p.hidden; })[0]; };
-    if (handle && find(handle)) store('product', handle);
+    // a product is found by its current Shopify handle or any old one listed in "aliases"
+    var find = function (h) { return D.products.filter(function (p) { return !p.hidden && (p.handle === h || (p.aliases || []).indexOf(h) !== -1); })[0]; };
+    if (handle && find(handle)) store('product', find(handle).handle);
     state.product = find(handle) || find(store('product')) || null;
     if (!state.product && visible.length === 1) state.product = visible[0];
     var dv = store('device') || {};
