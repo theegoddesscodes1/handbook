@@ -112,17 +112,22 @@
   var NAV2 = [['fix', 'Troubleshooting', 'help.html', 'help'], ['faq', 'Questions', 'faq.html', 'faq']];
   var TABS = [['home', 'Home', 'index.html', 'home'], ['start', 'Start', 'guide.html', 'start'], ['plan', 'Planner', 'planner.html', 'planner'], ['vid', 'Videos', 'videos.html', 'videos'], ['fix', 'Help', 'help.html', 'help']];
 
+  /* Videos stay hidden everywhere until at least one has a src in data/products.json */
+  function hasVideos() { return (D.videos || []).some(function (v) { return v.src; }); }
+  function navItems() { return hasVideos() ? NAV : NAV.filter(function (n) { return n[3] !== 'videos'; }); }
+  function tabItems() { return hasVideos() ? TABS : TABS.map(function (n) { return n[3] === 'videos' ? ['dev', 'Apps', 'apps.html', 'apps'] : n; }); }
+
   function chrome(page) {
     var startHref = 'guide.html?g=' + (nextStep() || D.setup[0]);
     var href = function (h, k) { return link(k === 'start' ? startHref : h); };
     var side = '<aside class="sb"><div class="sbin"><a href="' + link('index.html') + '" aria-label="The Handbook home"><img class="logo" src="images/logo-white.png" alt="Lilac Desk"></a><div class="tag">THE HANDBOOK</div>' +
       '<nav aria-label="Handbook"><div class="gl">GUIDE</div>' +
-      NAV.map(function (n) { return '<a class="ni' + (page === n[3] ? ' on' : '') + '" href="' + href(n[2], n[3]) + '"' + (page === n[3] ? ' aria-current="page"' : '') + '>' + ic(n[0]) + n[1] + '</a>'; }).join('') +
+      navItems().map(function (n) { return '<a class="ni' + (page === n[3] ? ' on' : '') + '" href="' + href(n[2], n[3]) + '"' + (page === n[3] ? ' aria-current="page"' : '') + '>' + ic(n[0]) + n[1] + '</a>'; }).join('') +
       '<div class="gl">HELP</div>' +
       NAV2.map(function (n) { return '<a class="ni' + (page === n[3] ? ' on' : '') + '" href="' + href(n[2], n[3]) + '"' + (page === n[3] ? ' aria-current="page"' : '') + '>' + ic(n[0]) + n[1] + '</a>'; }).join('') +
       '</nav><div class="sbfoot">' + (D.site.licenseUrl ? '<a href="' + D.site.licenseUrl + '">LICENSE</a>' : '') + (D.site.refundsUrl ? '<a href="' + D.site.refundsUrl + '">REFUNDS</a>' : '') + '</div></div></aside>';
     var mtop = '<header class="mtop"><a href="' + link('index.html') + '" aria-label="The Handbook home"><img class="logo" src="images/logo-white.png" alt="Lilac Desk"></a><button class="srchbtn" data-search aria-label="Search the Handbook">' + ic('search', 20) + '</button></header>';
-    var tabs = '<nav class="tabbar" aria-label="Handbook">' + TABS.map(function (n) {
+    var tabs = '<nav class="tabbar" aria-label="Handbook">' + tabItems().map(function (n) {
       var on = page === n[3] || (n[3] === 'help' && page === 'faq');
       return '<a class="' + (on ? 'on' : '') + '" href="' + href(n[2], n[3]) + '"' + (on ? ' aria-current="page"' : '') + '><span class="pi">' + ic(n[0], 20) + '</span>' + n[1].toUpperCase() + '</a>';
     }).join('') + '</nav>';
@@ -255,8 +260,8 @@
     c.innerHTML = '<div class="wrap">' + crumb(isStep ? 'Getting started' : 'Guides') +
       '<section class="ph"><div class="lb">// ' + (isStep ? 'GETTING STARTED &nbsp;·&nbsp; STEP ' + (si + 1) + ' OF ' + D.setup.length : 'GUIDE') + '</div><h1>' + g.headline + '</h1><p class="bd">' + esc(g.intro) + '</p></section>' + stepRow +
       '<section class="gl2"><div>' +
-      '<div class="card" style="padding:14px">' + clipBox(g.clip, g.clipNote, true) + '</div>' +
-      '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-top:40px;margin-bottom:6px"><span class="lb">// HOW TO DO IT</span><span class="cap" style="font-size:10px">SHOWING: ' + esc((deviceName() + ' + ' + appName()).toUpperCase()) + ' &nbsp;<a class="ul bg" style="font-size:10px;padding-bottom:2px" href="' + link('apps.html') + '">CHANGE</a></span></div>' +
+      (g.clip ? '<div class="card" style="padding:14px">' + clipBox(g.clip, g.clipNote, true) + '</div>' : '') +
+      '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-top:' + (g.clip ? '40px' : '0') + ';margin-bottom:6px"><span class="lb">// HOW TO DO IT</span><span class="cap" style="font-size:10px">SHOWING: ' + esc((deviceName() + ' + ' + appName()).toUpperCase()) + ' &nbsp;<a class="ul bg" style="font-size:10px;padding-bottom:2px" href="' + link('apps.html') + '">CHANGE</a></span></div>' +
       '<div>' + steps.map(function (s, i) { return '<div class="ins"><span class="n">' + pad(i + 1) + '</span><span class="x">' + s + '</span></div>'; }).join('') + '</div>' +
       '<div style="margin-top:28px">' + icard('bulb', 'Good to know', esc(g.tip)) + '</div>' +
       '<div class="navrow">' + (prev ? '<a class="ul" href="' + link('guide.html?g=' + prev.id) + '">← ' + esc(prev.short.toUpperCase()) + '</a>' : '<a class="ul" href="' + link('index.html') + '">← HOME</a>') +
@@ -435,12 +440,14 @@
   };
 
   pages.videos = function () {
+    if (!hasVideos()) { location.replace(link('index.html')); return; }
+    var vids = D.videos.filter(function (v) { return v.src; });
     var c = $('#content'), topic = 'All';
-    var feat = D.videos.filter(function (v) { return v.featured; })[0];
-    var topics = ['All'].concat(D.videos.filter(function (v) { return !v.featured; }).map(function (v) { return v.topic; }).filter(function (t, i, a) { return a.indexOf(t) === i; }));
+    var feat = vids.filter(function (v) { return v.featured; })[0];
+    var topics = ['All'].concat(vids.filter(function (v) { return !v.featured; }).map(function (v) { return v.topic; }).filter(function (t, i, a) { return a.indexOf(t) === i; }));
     var watched = store('watched') || [];
     function grid() {
-      return D.videos.filter(function (v) { return !v.featured && (topic === 'All' || v.topic === topic); }).map(function (v) {
+      return vids.filter(function (v) { return !v.featured && (topic === 'All' || v.topic === topic); }).map(function (v) {
         var href = v.src ? v.src : (v.guide ? link('guide.html?g=' + v.guide) : '#');
         return '<a class="vc" style="display:flex;flex-direction:column;min-width:0" href="' + href + '" data-v="' + v.id + '"' + (v.src ? ' target="_blank" rel="noopener"' : '') + '><span class="vth"><span class="pb">' + ic('play', 18, 1.4) + '</span><span class="du">' + esc(v.length) + '</span>' +
           (v.src ? (watched.indexOf(v.id) > -1 ? '<span class="wd">WATCHED</span>' : '') : '<span class="cs">COMING SOON</span>') + '</span><span class="cap" style="font-size:10px;margin-top:14px">' + esc(v.topic.toUpperCase()) + '</span><span class="ser" style="margin-top:6px;font-size:17px;color:var(--ink)">' + esc(v.title) + '</span></a>';
