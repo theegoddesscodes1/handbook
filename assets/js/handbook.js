@@ -125,16 +125,26 @@
       navItems().map(function (n) { return '<a class="ni' + (page === n[3] ? ' on' : '') + '" href="' + href(n[2], n[3]) + '"' + (page === n[3] ? ' aria-current="page"' : '') + '>' + ic(n[0]) + n[1] + '</a>'; }).join('') +
       '<div class="gl">HELP</div>' +
       NAV2.map(function (n) { return '<a class="ni' + (page === n[3] ? ' on' : '') + '" href="' + href(n[2], n[3]) + '"' + (page === n[3] ? ' aria-current="page"' : '') + '>' + ic(n[0]) + n[1] + '</a>'; }).join('') +
-      '</nav><div class="sbfoot">' + (D.site.licenseUrl ? '<a href="' + D.site.licenseUrl + '">LICENSE</a>' : '') + (D.site.refundsUrl ? '<a href="' + D.site.refundsUrl + '">REFUNDS</a>' : '') + '</div></div></aside>';
-    var mtop = '<header class="mtop"><a href="' + link('index.html') + '" aria-label="The Handbook home"><img class="logo" src="images/logo-white.png" alt="Lilac Desk"></a><button class="srchbtn" data-search aria-label="Search the Handbook">' + ic('search', 20) + '</button></header>';
+      '</nav><a class="sbchat" href="' + D.site.contactUrl + '">' + ic('msg', 17, 1.4) + 'Message me</a><div class="sbfoot">' + (D.site.licenseUrl ? '<a href="' + D.site.licenseUrl + '">LICENSE</a>' : '') + (D.site.refundsUrl ? '<a href="' + D.site.refundsUrl + '">REFUNDS</a>' : '') + '</div></div></aside>';
+    var mtop = '<header class="mtop"><a href="' + link('index.html') + '" aria-label="The Handbook home"><img class="logo" src="images/logo-white.png" alt="Lilac Desk"></a><div class="mtopr"><a class="srchbtn chatbtn" href="' + D.site.contactUrl + '" aria-label="Message me">' + ic('msg', 20, 1.4) + '</a><button class="srchbtn" data-search aria-label="Search the Handbook">' + ic('search', 20) + '</button></div></header>';
     var tabs = '<nav class="tabbar" aria-label="Handbook">' + tabItems().map(function (n) {
       var on = page === n[3] || (n[3] === 'help' && page === 'faq');
       return '<a class="' + (on ? 'on' : '') + '" href="' + href(n[2], n[3]) + '"' + (on ? ' aria-current="page"' : '') + '><span class="pi">' + ic(n[0], 20) + '</span>' + n[1].toUpperCase() + '</a>';
     }).join('') + '</nav>';
-    var msg = '<a class="msg" href="' + D.site.contactUrl + '">' + ic('msg', 18, 1.4) + 'Message me</a>';
     var search = '<div class="search" role="dialog" aria-modal="true" aria-label="Search the Handbook"><div class="spanel"><div class="sfield">' + ic('search', 18) + '<input type="search" placeholder="What do you need help with?" aria-label="Search the Handbook" autocomplete="off"><button data-sclose aria-label="Close search">' + ic('close', 18) + '</button></div><div class="sres"></div></div></div>';
-    document.body.innerHTML = '<div class="shell">' + side + '<div class="main">' + mtop + '<div class="content" id="content"></div><footer class="foot wrap"><span class="cap">© ' + new Date().getFullYear() + ' LILAC DESK · THE HANDBOOK</span></footer></div></div>' + tabs + msg + search;
+    document.body.innerHTML = '<div class="shell">' + side + '<div class="main">' + mtop + '<div class="content" id="content"></div><footer class="foot wrap"><span class="cap">© ' + new Date().getFullYear() + ' LILAC DESK · THE HANDBOOK</span></footer></div></div>' + tabs + search;
     wireSearch();
+    loadChat();
+  }
+
+  // Live chat: the Message me button and every contact link open a chat window instead of leaving the Handbook.
+  function loadChat() {
+    if (window.__lilacChatLoaded) return;
+    window.LilacChat = { button: false, openers: 'a[href*="/pages/contact"]' };
+    var s = document.createElement('script');
+    s.src = 'assets/js/lilac-chat.js';
+    s.async = true;
+    document.body.appendChild(s);
   }
 
   function topbar(left) {
@@ -272,7 +282,7 @@
       (p && p.pages.length ? '<a href="' + link('planner.html') + '">See every link in the page map<span style="color:var(--burgundy);display:flex">' + ic('chev', 15) + '</span></a>' : '') +
       related.map(function (r) { return '<a href="' + link('guide.html?g=' + r.id) + '">' + esc(r.title) + '<span style="color:var(--burgundy);display:flex">' + ic('chev', 15) + '</span></a>'; }).join('') +
       '<a href="' + link('help.html') + '">Something not working?<span style="color:var(--burgundy);display:flex">' + ic('chev', 15) + '</span></a></div></div>' +
-      icard('msg', 'Stuck?', 'Tap Message me in the corner and I will help.') +
+      icard('msg', 'Stuck?', 'Tap Message me and I will help.') +
       '</aside></section></div>';
     var btn = $('[data-done]');
     if (btn) btn.addEventListener('click', function () {
