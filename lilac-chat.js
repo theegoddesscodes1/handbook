@@ -322,6 +322,6 @@
   }
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && state) poll(); });
 
-  function init() { build(); if (state) poll(); }
+  function init() { build(); cfg.open = function () { setOpen(true); }; window.LilacChat = cfg; if (state) poll(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
