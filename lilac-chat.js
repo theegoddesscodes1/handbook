@@ -24,14 +24,16 @@
   var state = load() || null; // { id, token, name, email, seen: lastSeenAdminCreatedAt }
   var messages = [];
   var lastAt = '';
+  var ended = null, peekTimer = null, PEEK_MS = 6000;
   var open = false, timer = null, opened = Date.now(), sending = false, unread = 0;
 
   /* ---------- styles ---------- */
   var css = '' +
   '.ldc,.ldc *{box-sizing:border-box}' +
+  '.ldc button{min-width:0!important;min-height:0!important;text-shadow:none!important;-webkit-appearance:none!important;appearance:none!important}' +
   '.ldc{position:fixed;right:18px;bottom:18px;z-index:2147483000;font-family:Jost,Montserrat,Helvetica,Arial,sans-serif;color:#333}' +
-  '.ldc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px 11px 15px;border:0;border-radius:999px;background:#333;color:#FAFAF8;font:400 13.5px/1 Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 28px -12px rgba(51,51,51,.55);transition:background .15s,transform .15s}' +
-  '.ldc-btn:hover{background:#000;transform:translateY(-1px)}' +
+  '.ldc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px 11px 15px!important;margin:0!important;border:0!important;border-radius:999px!important;background:#333!important;color:#FAFAF8!important;font:400 13.5px/1 Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:.02em;cursor:pointer;box-shadow:0 10px 28px -12px rgba(51,51,51,.55);transition:background .15s,transform .15s}' +
+  '.ldc-btn:hover{background:#000!important;transform:translateY(-1px)}' +
   '.ldc-btn:focus-visible{outline:2px solid #333;outline-offset:3px}' +
   '.ldc-dot{min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#5C181E;color:#fff;font-size:11px;line-height:18px;text-align:center;margin-left:2px}' +
   '.ldc-btn:hover .ldc-dot{background:#fff;color:#5C181E}' +
@@ -40,18 +42,20 @@
   '.ldc-head{background:#5C181E;color:#fff;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}' +
   '.ldc-brand{font-family:"Times New Roman",Times,Georgia,serif;font-size:15px;letter-spacing:4px}' +
   '.ldc-sub{margin-top:5px;font-size:11.5px;letter-spacing:.04em;color:#ecd9dc}' +
-  '.ldc-x{background:none;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:0 2px;opacity:.85}' +
+  '.ldc-x{flex:none;background:none!important;border:0!important;box-shadow:none!important;color:#fff;font-size:22px!important;line-height:1!important;cursor:pointer;padding:0 2px!important;margin:0!important;width:auto!important;height:auto!important;opacity:.85}' +
   '.ldc-x:hover{opacity:1}' +
   '.ldc-body{flex:1;overflow-y:auto;padding:16px 16px 8px;background:#fff}' +
   '.ldc-intro{font-size:13.5px;line-height:1.6;color:#555;margin:0 0 14px}' +
   '.ldc-eye{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#5C181E;margin:0 0 8px}' +
   '.ldc-f{display:block;margin:0 0 12px}' +
   '.ldc-f span{display:block;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#777;margin-bottom:5px}' +
-  '.ldc-f input,.ldc-f textarea,.ldc-comp textarea{width:100%;border:0;border-bottom:1px solid #333;border-radius:0;padding:7px 2px;font:400 14px/1.45 Jost,Montserrat,Helvetica,Arial,sans-serif;color:#111;background:transparent;outline:none;resize:none}' +
-  '.ldc-f input:focus,.ldc-f textarea:focus{border-bottom-color:#5C181E;box-shadow:0 1px 0 #5C181E}' +
+  '.ldc input,.ldc textarea{-webkit-appearance:none!important;appearance:none!important;width:100%!important;max-width:none!important;min-height:0!important;height:auto;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;outline:none!important;resize:none!important;font:400 14px/1.45 Jost,Montserrat,Helvetica,Arial,sans-serif!important;color:#111!important;letter-spacing:0!important;text-transform:none!important}' +
+  '.ldc-f input,.ldc-f textarea{border-bottom:1px solid #333!important;padding:7px 2px!important}' +
+  '.ldc-f input:focus,.ldc-f textarea:focus{border-bottom-color:#5C181E!important;box-shadow:0 1px 0 #5C181E!important}' +
+  '.ldc input::placeholder,.ldc textarea::placeholder{color:#999!important;opacity:1}' +
   '.ldc-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}' +
-  '.ldc-go{display:block;width:100%;margin-top:6px;padding:13px 16px;border:1px solid #333;border-radius:999px;background:#333;color:#fff;font:500 11px/1 Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer}' +
-  '.ldc-go:hover{background:#000;border-color:#000}' +
+  '.ldc-go{display:block;width:100%!important;margin:6px 0 0!important;padding:13px 16px!important;border:1px solid #333!important;border-radius:999px!important;background:#333!important;color:#fff!important;height:auto!important;font:500 11px/1 Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer}' +
+  '.ldc-go:hover{background:#000!important;border-color:#000!important}' +
   '.ldc-go:disabled{opacity:.6;cursor:default}' +
   '.ldc-err{font-size:12px;color:#b3261e;margin:8px 0 0}' +
   '.ldc-msg{display:flex;margin:0 0 10px}' +
@@ -62,12 +66,21 @@
   '.ldc-who{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#5C181E;margin:0 0 4px}' +
   '.ldc-time{font-size:10px;color:#999;margin-top:4px}' +
   '.ldc-note{font-size:11.5px;line-height:1.5;color:#888;text-align:center;margin:6px 8px 12px}' +
-  '.ldc-comp{display:flex;align-items:flex-end;gap:10px;border-top:1px solid #eee;padding:10px 12px 12px;background:#fff}' +
-  '.ldc-comp textarea{border-bottom:0;max-height:110px;padding:8px 2px}' +
-  '.ldc-send{flex:none;border:0;border-radius:50%;background:#333;color:#fff;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center}' +
-  '.ldc-send:hover{background:#000}.ldc-send:disabled{opacity:.5;cursor:default}' +
-  '.ldc-new{display:block;margin:4px auto 10px;background:none;border:0;font:400 10.5px Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#888;text-decoration:underline;cursor:pointer}' +
-  '@media (max-width:749px){.ldc{right:14px;bottom:' + (RAISE || '14px') + '}.ldc-btn{padding:12px;position:relative}.ldc-btn .ldc-dot{position:absolute;top:-5px;right:-5px;margin:0;box-shadow:0 0 0 2px #fff}.ldc-btn .ldc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
+  '.ldc-foot{background:#fff}' +
+  '.ldc-comp{display:flex;align-items:flex-end;gap:10px;margin:0!important;padding:8px 12px 12px 16px;background:#fff!important;border:0!important;box-shadow:none!important}' +
+  '.ldc-comp textarea{flex:1;max-height:110px!important;padding:9px 0!important}' +
+  '.ldc-send{flex:none;border:0!important;border-radius:50%!important;background:#333!important;color:#fff!important;width:38px!important;height:38px!important;min-width:0!important;min-height:0!important;padding:0!important;margin:0!important;box-shadow:none!important;cursor:pointer;display:flex;align-items:center;justify-content:center}' +
+  '.ldc-send:hover{background:#000!important}.ldc-send:disabled{opacity:.5;cursor:default}' +
+  '.ldc-end{text-align:center;padding:26px 8px 8px}' +
+  '.ldc-end h4{margin:0 0 6px;font:400 19px/1.3 "Times New Roman",Times,Georgia,serif;color:#222;letter-spacing:0;text-transform:none}' +
+  '.ldc-end p{margin:0 0 18px;font-size:13.5px;line-height:1.55;color:#666}' +
+  '.ldc-rate{display:flex;gap:10px;justify-content:center;margin:0 0 6px}' +
+  '.ldc-rate button{flex:1;max-width:140px;padding:12px 10px!important;margin:0!important;height:auto!important;border:1px solid #333!important;border-radius:999px!important;background:#fff!important;color:#333!important;font:500 11px/1 Jost,Montserrat,Helvetica,Arial,sans-serif!important;letter-spacing:2px;text-transform:uppercase;cursor:pointer}' +
+  '.ldc-rate button:hover{background:#333!important;color:#fff!important}' +
+  '.ldc-rate button:disabled{opacity:.5;cursor:default}' +
+  '.ldc-skip{font-size:11.5px!important;color:#999!important;margin:10px 0 0!important}' +
+  '.ldc-new{display:block;margin:4px auto 10px!important;padding:2px 4px!important;width:auto!important;height:auto!important;background:none!important;border:0!important;box-shadow:none!important;font:400 10.5px Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#888;text-decoration:underline;cursor:pointer}' +
+  '@media (max-width:749px){.ldc{right:14px;bottom:' + (RAISE || '14px') + '}.ldc-btn{padding:12px!important;position:relative}.ldc-btn .ldc-dot{position:absolute;top:-5px;right:-5px;margin:0;box-shadow:0 0 0 2px #fff}.ldc-btn .ldc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
   '.ldc.on{left:0;right:0;bottom:0;top:0}.ldc.on .ldc-btn{display:none}.ldc-win{position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;max-width:none;height:min(86vh,640px);max-height:none;border-left:0;border-right:0;border-bottom:0;border-radius:16px 16px 0 0}}' +
   '.ldc.nobtn .ldc-btn{display:none}.ldc.nobtn .ldc-win{bottom:0}.ldc.nobtn:not(.on){pointer-events:none}' +
   '[data-ldc-unread]::after{content:attr(data-ldc-unread);position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:#5C181E;color:#fff;font-size:11px;line-height:20px;text-align:center;box-shadow:0 0 0 2px #fff}' +
@@ -75,7 +88,7 @@
   '.ldc-peek.in{opacity:1;transform:none}' +
   '.ldc-peek .ldc-who{color:#333;margin:0 0 4px}' +
   '.ldc-peek-t{margin:0;font-size:13.5px;line-height:1.45;color:#222;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}' +
-  '.ldc-peek-x{position:absolute;top:6px;right:8px;background:none;border:0;font-size:18px;line-height:1;color:#999;cursor:pointer;padding:2px}' +
+  '.ldc-peek-x{position:absolute;top:6px;right:8px;background:none!important;border:0!important;box-shadow:none!important;font-size:18px!important;line-height:1!important;color:#999;cursor:pointer;padding:2px!important;margin:0!important;width:auto!important;height:auto!important}' +
   '.ldc-peek-x:hover{color:#333}' +
   '.ldc.on .ldc-peek{display:none}' +
   '@media print{.ldc{display:none}}';
@@ -127,7 +140,7 @@
       opened = Date.now();
       setTimeout(function () { var f = root.querySelector(state ? '.ldc-comp textarea' : '.ldc-f input'); if (f) f.focus(); }, 60);
       if (state) poll();
-    }
+    } else if (ended) { ended = null; render(); }
     schedule();
   }
 
@@ -135,8 +148,11 @@
     peek.querySelector('.ldc-peek-t').textContent = text;
     peek.hidden = false;
     requestAnimationFrame(function () { peek.classList.add('in'); });
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(fadePeek, PEEK_MS);
   }
-  function hidePeek() { if (!peek) return; peek.classList.remove('in'); peek.hidden = true; }
+  function fadePeek() { if (!peek) return; peek.classList.remove('in'); peekTimer = setTimeout(function () { peek.hidden = true; }, 220); }
+  function hidePeek() { if (!peek) return; clearTimeout(peekTimer); peek.classList.remove('in'); peek.hidden = true; }
 
   function badge() {
     var n = unread > 9 ? '9+' : String(unread);
@@ -147,6 +163,22 @@
   /* ---------- views ---------- */
   function render() {
     var foot = root.querySelector('.ldc-foot');
+    if (ended) {
+      foot.innerHTML = '';
+      if (!ended.rated) {
+        body.innerHTML = '<div class="ldc-end"><h4>Chat ended</h4><p>Did this solve your problem?</p>' +
+          '<div class="ldc-rate"><button type="button" data-rate="solved">Yes</button><button type="button" data-rate="unsolved">Not yet</button></div>' +
+          '<p class="ldc-skip">Or just close this window.</p></div>';
+        Array.prototype.forEach.call(body.querySelectorAll('[data-rate]'), function (b) { b.addEventListener('click', function () { rate(b.getAttribute('data-rate')); }); });
+      } else {
+        body.innerHTML = '<div class="ldc-end"><h4>Thank you</h4><p>' + (ended.rated === 'solved'
+          ? 'So glad it\u2019s sorted. Happy planning!'
+          : 'Sorry it\u2019s not sorted yet. I\u2019ll follow up by email at ' + esc(ended.email) + '.') + '</p>' +
+          '<button class="ldc-go" type="button" data-again>Start a new chat</button></div>';
+        body.querySelector('[data-again]').addEventListener('click', function () { ended = null; render(); });
+      }
+      return;
+    }
     if (!state) {
       foot.innerHTML = '';
       body.innerHTML =
@@ -171,12 +203,10 @@
     if (messages.length && !messages.some(function (m) { return m.sender === 'admin'; })) {
       html += '<p class="ldc-note">Got it. I\'ll reply here as soon as I can. If you leave, the reply goes to ' + esc(state.email) + '.</p>';
     }
-    html += '<button class="ldc-new" type="button">Start a new chat</button>';
+    html += '<button class="ldc-new" type="button">End chat</button>';
     body.innerHTML = html;
     body.scrollTop = body.scrollHeight;
-    body.querySelector('.ldc-new').addEventListener('click', function () {
-      if (!window.confirm || window.confirm('Start a new chat? This one stays in your email.')) { state = null; messages = []; lastAt = ''; save(null); render(); }
-    });
+    body.querySelector('.ldc-new').addEventListener('click', endChat);
     if (!foot.querySelector('.ldc-comp')) {
       foot.innerHTML = '<form class="ldc-comp"><textarea rows="1" placeholder="Write a message" aria-label="Message" maxlength="2000"></textarea><button class="ldc-send" type="submit" aria-label="Send">' + sendIcon + '</button></form>';
       var form = foot.querySelector('form'), ta = form.querySelector('textarea');
@@ -242,6 +272,23 @@
     });
     messages.sort(function (a, b) { return a.created_at < b.created_at ? -1 : 1; });
     return fresh;
+  }
+
+  function endChat() {
+    if (!state) return;
+    ended = { id: state.id, token: state.token, email: state.email, rated: '' };
+    call({ action: 'chat_end', id: state.id, token: state.token }).catch(function () {});
+    state = null; messages = []; lastAt = ''; save(null); clearTimeout(timer);
+    unread = 0; badge(); hidePeek();
+    render();
+  }
+
+  function rate(value) {
+    if (!ended || ended.rated) return;
+    Array.prototype.forEach.call(body.querySelectorAll('[data-rate]'), function (b) { b.disabled = true; });
+    call({ action: 'chat_end', id: ended.id, token: ended.token, rating: value }).catch(function () {});
+    ended.rated = value;
+    render();
   }
 
   function reset() { state = null; messages = []; lastAt = ''; save(null); render(); }
