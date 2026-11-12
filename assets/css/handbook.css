@@ -281,7 +281,12 @@ details .ans{padding:0 44px 20px 0;font-size:14.5px;line-height:24px;color:var(-
 }
 .mtopr{display:flex;align-items:center}
 .chatbtn{position:relative}
-.chatbtn[data-ldc-unread]::after{box-sizing:border-box;top:5px;right:1px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;line-height:17px;font-size:10px;background:#fff;color:var(--burgundy);box-shadow:none}
+body .chatbtn[data-ldc-unread]::after{box-sizing:border-box;top:5px;right:1px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;line-height:17px;font-size:10px;background:var(--lilac);color:var(--ink-dark);box-shadow:none}
+/* live chat: lilac header and lilac unread counts in the Handbook (less red) */
+body .ldc-head{background:var(--lilac);color:var(--ink-dark)}
+body .ldc-sub{color:var(--body)}
+body .ldc-x{color:var(--ink-dark)}
+body [data-ldc-unread]::after{background:var(--lilac);color:var(--ink-dark)}
 /* live chat window: opens beside the sidebar on desktop, under the header on phones */
 @media (min-width:900px){
   body .ldc.nobtn{left:calc(var(--side) + 18px);right:auto;bottom:18px}
@@ -291,4 +296,8 @@ details .ans{padding:0 44px 20px 0;font-size:14.5px;line-height:24px;color:var(-
 @media (max-width:899px){
   body .ldc.nobtn .ldc-peek{position:fixed;top:66px;right:10px;bottom:auto;left:auto;border-radius:16px 4px 16px 16px}
 }
+.mapcard{margin-top:28px;padding:26px 26px 28px;background:var(--lilac-soft);border-color:var(--lilac)}
+.mapcard .ser{margin-top:10px;font-size:21px;color:var(--ink-dark)}
+.mapcard .bd{margin:8px 0 18px;max-width:520px}
+@media (max-width:899px){.mapcard .pill{width:100%}}
 @media print{.sb,.mtop,.tabbar,.msg,.search{display:none!important}}
