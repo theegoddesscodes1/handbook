@@ -1277,6 +1277,50 @@
           ]
         },
         {
+          "id": "canvas",
+          "name": "Business model canvas",
+          "group": "departments",
+          "image": "images/lagenda-2027/canvas.jpg",
+          "about": "Your business model in seven steps, from who you serve to how you test it, one page per step.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 01 takes you back to the index."
+            },
+            {
+              "x": 26.2,
+              "y": 6.3,
+              "label": "Small number and title",
+              "goesTo": "Vision & Strategy",
+              "text": "Opens the department's opening page."
+            },
+            {
+              "x": 37.7,
+              "y": 96.7,
+              "label": "STEP ONE to STEP SEVEN",
+              "goesTo": "That step's page",
+              "text": "Move between the seven steps without going back to the index."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Work in order",
+              "text": "Each step builds on the one before, so start with Step One: who you are serving."
+            }
+          ]
+        },
+        {
           "id": "projects",
           "name": "Projects index",
           "group": "departments",
@@ -1322,6 +1366,50 @@
               "icon": "pen",
               "title": "Same idea elsewhere",
               "text": "Campaigns, giveaways and events work the same way: an index where each row opens its own page."
+            }
+          ]
+        },
+        {
+          "id": "meetings",
+          "name": "Meeting notes",
+          "group": "departments",
+          "image": "images/lagenda-2027/meetings.jpg",
+          "about": "Eight meeting pages with the agenda, notes, decisions and action items for each.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 02 takes you back to the index."
+            },
+            {
+              "x": 20.4,
+              "y": 6.3,
+              "label": "Small number and title",
+              "goesTo": "Planning & Operations",
+              "text": "Opens the department's opening page."
+            },
+            {
+              "x": 33.2,
+              "y": 96.7,
+              "label": "NO. 1 to NO. 8",
+              "goesTo": "That meeting's page",
+              "text": "Jump between your eight meeting pages."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Same idea elsewhere",
+              "text": "Competitors and the launch plan have numbered tabs along the bottom too."
             }
           ]
         },
