@@ -118,6 +118,8 @@
   function tabItems() { return hasVideos() ? TABS : TABS.map(function (n) { return n[3] === 'videos' ? ['dev', 'Apps', 'apps.html', 'apps'] : n; }); }
 
   function chrome(page) {
+    // Setup steps live on guide.html, so highlight Getting started for them
+    if (page === 'guide') { var gid = qs('g'); if (!gid || D.setup.indexOf(gid) > -1) page = 'start'; }
     var startHref = 'guide.html?g=' + (nextStep() || D.setup[0]);
     var href = function (h, k) { return link(k === 'start' ? startHref : h); };
     var side = '<aside class="sb"><div class="sbin"><a href="' + link('index.html') + '" aria-label="The Handbook home"><img class="logo" src="images/logo-white.png" alt="Lilac Desk"></a><div class="tag">THE HANDBOOK</div>' +
@@ -172,6 +174,14 @@
     if (src) return '<div class="clip"><video src="' + esc(src) + '" controls playsinline preload="metadata"></video></div>';
     return '<div class="clip"><span class="play" style="' + (big ? '' : 'width:52px;height:52px') + '">' + ic('play', 22, 1.4) + '</span><span class="cap" style="font-size:10px;text-align:center;padding:0 16px">Clip coming soon' + (note ? ': ' + esc(note) : '') + '</span></div>';
   }
+  // Big "open the page map" card on the Learn the links step
+  function mapCard(p) {
+    if (p && !p.pages.length) return '';
+    var body = p ? 'Every page of ' + esc(p.name) + ', and exactly where each link takes you. Keep it open while you try the links.' : 'Choose your planner and see every page, and exactly where each link takes you.';
+    return '<div class="card mapcard"><span class="lb">// YOUR PAGE MAP</span><div class="ser">See where <i>every link</i> is.</div><p class="bd">' + body + '</p>' +
+      '<a class="pill" href="' + link(p ? 'planner.html' : 'index.html') + '">' + (p ? 'OPEN THE PAGE MAP' : 'CHOOSE YOUR PLANNER') + '</a></div>';
+  }
+
   function icard(icon, t, d, extra) {
     return '<div class="card icard"><span class="eico">' + ic(icon, 18) + '</span><span><span class="t">' + t + '</span><span class="d">' + d + '</span>' + (extra || '') + '</span></div>';
   }
@@ -264,7 +274,8 @@
     var id = qs('g') || nextStep() || D.setup[0], g = guide(id) || guide(D.setup[0]);
     var c = $('#content'), si = D.setup.indexOf(g.id), isStep = si > -1, p = state.product;
     var steps = (g.steps[state.app] || g.steps['default']).slice();
-    if (g.id === 'basics' && p && p.version === 'undated' && g.undatedSteps) steps = steps.concat(g.undatedSteps);
+    // undated planners get the dating step just before the last step (No copying pages needed)
+    if (g.id === 'basics' && p && p.version === 'undated' && g.undatedSteps) steps.splice.apply(steps, [steps.length - 1, 0].concat(g.undatedSteps));
     var stepRow = '';
     if (isStep) {
       stepRow = '<section style="margin-top:34px;max-width:880px"><div style="display:flex;justify-content:space-between;gap:12px"><span class="cap">YOUR SETUP</span><span class="cap">' + state.done.length + ' OF ' + D.setup.length + ' DONE</span></div><div class="steps">' +
@@ -283,6 +294,7 @@
       (g.clip ? '<div class="card" style="padding:14px">' + clipBox(g.clip, g.clipNote, true) + '</div>' : '') +
       '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-top:' + (g.clip ? '40px' : '0') + ';margin-bottom:6px"><span class="lb">// HOW TO DO IT</span><span class="cap" style="font-size:10px">SHOWING: ' + esc((deviceName() + ' + ' + appName()).toUpperCase()) + ' &nbsp;<a class="ul bg" style="font-size:10px;padding-bottom:2px" href="' + link('apps.html') + '">CHANGE</a></span></div>' +
       '<div>' + steps.map(function (s, i) { return '<div class="ins"><span class="n">' + pad(i + 1) + '</span><span class="x">' + s + '</span></div>'; }).join('') + '</div>' +
+      (g.id === 'links' ? mapCard(p) : '') +
       '<div style="margin-top:28px">' + icard('bulb', 'Good to know', esc(g.tip)) + '</div>' +
       '<div class="navrow">' + (prev ? '<a class="ul" href="' + link('guide.html?g=' + prev.id) + '">← ' + esc(prev.short.toUpperCase()) + '</a>' : '<a class="ul" href="' + link('index.html') + '">← HOME</a>') +
       (isStep ? '<button class="pill" data-done>' + (next ? 'DONE · NEXT STEP' : 'DONE · FINISH SETUP') + '</button>' : '<a class="pill" href="' + link('index.html') + '">BACK TO HOME</a>') + '</div>' +
