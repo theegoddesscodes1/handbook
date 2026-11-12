@@ -1213,8 +1213,8 @@
               "x": 12.7,
               "y": 19.0,
               "label": "Big department number",
-              "goesTo": "The cover",
-              "text": "The big number in the dark band takes you to the cover."
+              "goesTo": "The Index",
+              "text": "The big number in the dark band takes you back to the index."
             },
             {
               "x": 91.8,
