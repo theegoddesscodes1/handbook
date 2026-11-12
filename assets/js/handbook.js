@@ -152,7 +152,7 @@
       if (window.LilacChat.open) window.LilacChat.open(); else wanted = true;
     }, true);
     var s = document.createElement('script');
-    s.src = 'assets/js/lilac-chat.js?v=4';
+    s.src = 'assets/js/lilac-chat.js?v=' + (window.HBV || Date.now());
     s.async = true;
     s.onload = function () { if (wanted && window.LilacChat.open) window.LilacChat.open(); };
     s.onerror = function () { failed = true; if (wanted) location.href = D.site.contactUrl; };

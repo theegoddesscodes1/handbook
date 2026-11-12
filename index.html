@@ -10,11 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/handbook.css">
+<!-- Loads the newest Handbook files every time, so updates show right after GitHub publishes -->
+<script>window.HBV = Math.floor(Date.now() / 60000); document.write('<link rel="stylesheet" href="assets/css/handbook.css?v=' + window.HBV + '">');</script>
+<noscript><link rel="stylesheet" href="assets/css/handbook.css"></noscript>
 <!-- ANALYTICS: paste your analytics snippet here (same line in every page) -->
 </head>
 <body data-page="home">
 <noscript><p style="padding:40px 24px;font-family:Georgia,serif">The Handbook needs JavaScript turned on. You can always reach me at <a href="https://lilacdesk.com/pages/contact">lilacdesk.com/pages/contact</a>.</p></noscript>
-<script src="assets/js/handbook.js"></script>
+<script>document.write('<script src="assets/js/handbook.js?v=' + window.HBV + '"><\/script>');</script>
 </body>
 </html>
