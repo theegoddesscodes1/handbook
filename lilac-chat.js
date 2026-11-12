@@ -16,7 +16,7 @@
   var OWN_BUTTON = !(cfg.button === false || ds.button === 'false'); // false = the page has its own button
   var OPENERS = '[data-lilac-chat]' + (cfg.openers || ds.openers ? ',' + (cfg.openers || ds.openers) : '');
   var KEY = 'lilac-chat-v1';
-  var POLL_OPEN = 4000, POLL_CLOSED = 30000;
+  var POLL_OPEN = 4000, POLL_CLOSED = 10000;
 
   /* ---------- storage (never required to work) ---------- */
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
@@ -37,9 +37,9 @@
   '.ldc-btn:hover .ldc-dot{background:#fff;color:#5C181E}' +
   '.ldc-win{position:absolute;right:0;bottom:58px;width:360px;max-width:calc(100vw - 28px);height:520px;max-height:calc(100vh - 110px);background:#fff;border:1px solid #e6e2ea;border-radius:16px;box-shadow:0 24px 60px -24px rgba(51,51,51,.45);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .18s,transform .18s}' +
   '.ldc.on .ldc-win{opacity:1;transform:none;pointer-events:auto}' +
-  '.ldc-head{background:#333;color:#fff;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}' +
+  '.ldc-head{background:#5C181E;color:#fff;padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}' +
   '.ldc-brand{font-family:"Times New Roman",Times,Georgia,serif;font-size:15px;letter-spacing:4px}' +
-  '.ldc-sub{margin-top:5px;font-size:11.5px;letter-spacing:.04em;color:#d6d6d6}' +
+  '.ldc-sub{margin-top:5px;font-size:11.5px;letter-spacing:.04em;color:#ecd9dc}' +
   '.ldc-x{background:none;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:0 2px;opacity:.85}' +
   '.ldc-x:hover{opacity:1}' +
   '.ldc-body{flex:1;overflow-y:auto;padding:16px 16px 8px;background:#fff}' +
@@ -67,10 +67,17 @@
   '.ldc-send{flex:none;border:0;border-radius:50%;background:#333;color:#fff;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center}' +
   '.ldc-send:hover{background:#000}.ldc-send:disabled{opacity:.5;cursor:default}' +
   '.ldc-new{display:block;margin:4px auto 10px;background:none;border:0;font:400 10.5px Jost,Montserrat,Helvetica,Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#888;text-decoration:underline;cursor:pointer}' +
-  '@media (max-width:749px){.ldc{right:14px;bottom:' + (RAISE || '14px') + '}.ldc-btn{padding:12px}.ldc-btn .ldc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
+  '@media (max-width:749px){.ldc{right:14px;bottom:' + (RAISE || '14px') + '}.ldc-btn{padding:12px;position:relative}.ldc-btn .ldc-dot{position:absolute;top:-5px;right:-5px;margin:0;box-shadow:0 0 0 2px #fff}.ldc-btn .ldc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
   '.ldc.on{left:0;right:0;bottom:0;top:0}.ldc.on .ldc-btn{display:none}.ldc-win{position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;max-width:none;height:min(86vh,640px);max-height:none;border-left:0;border-right:0;border-bottom:0;border-radius:16px 16px 0 0}}' +
   '.ldc.nobtn .ldc-btn{display:none}.ldc.nobtn .ldc-win{bottom:0}.ldc.nobtn:not(.on){pointer-events:none}' +
-  '[data-ldc-unread]{position:relative}[data-ldc-unread]::after{content:attr(data-ldc-unread);position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:#5C181E;color:#fff;font-size:11px;line-height:20px;text-align:center;box-shadow:0 0 0 2px #fff}' +
+  '[data-ldc-unread]::after{content:attr(data-ldc-unread);position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:#5C181E;color:#fff;font-size:11px;line-height:20px;text-align:center;box-shadow:0 0 0 2px #fff}' +
+  '.ldc-peek{position:absolute;right:0;bottom:58px;width:280px;max-width:calc(100vw - 28px);background:#fff;border:1px solid #e6e2ea;border-radius:16px 16px 4px 16px;box-shadow:0 18px 44px -18px rgba(51,51,51,.5);padding:13px 34px 12px 15px;cursor:pointer;pointer-events:auto;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}' +
+  '.ldc-peek.in{opacity:1;transform:none}' +
+  '.ldc-peek .ldc-who{color:#333;margin:0 0 4px}' +
+  '.ldc-peek-t{margin:0;font-size:13.5px;line-height:1.45;color:#222;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}' +
+  '.ldc-peek-x{position:absolute;top:6px;right:8px;background:none;border:0;font-size:18px;line-height:1;color:#999;cursor:pointer;padding:2px}' +
+  '.ldc-peek-x:hover{color:#333}' +
+  '.ldc.on .ldc-peek{display:none}' +
   '@media print{.ldc{display:none}}';
 
   var icon = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>';
@@ -80,7 +87,7 @@
   function time(iso) { try { return new Date(iso).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); } catch (e) { return ''; } }
 
   /* ---------- DOM ---------- */
-  var root, win, body, btn, dot;
+  var root, win, body, btn, dot, peek;
   function build() {
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     root = document.createElement('div');
@@ -92,12 +99,15 @@
         '<div class="ldc-body" aria-live="polite"></div>' +
         '<div class="ldc-foot"></div>' +
       '</div>' +
+      '<div class="ldc-peek" role="status" hidden><button class="ldc-peek-x" type="button" aria-label="Dismiss">&times;</button><p class="ldc-who">Kerry replied</p><p class="ldc-peek-t"></p></div>' +
       '<button class="ldc-btn" type="button" aria-label="Chat with Lilac Desk">' + icon + '<span class="ldc-l">' + esc(LABEL) + '</span><span class="ldc-dot" hidden></span></button>';
     document.body.appendChild(root);
     win = root.querySelector('.ldc-win');
     body = root.querySelector('.ldc-body');
     btn = root.querySelector('.ldc-btn');
     dot = root.querySelector('.ldc-dot');
+    peek = root.querySelector('.ldc-peek');
+    peek.addEventListener('click', function (e) { if (e.target.closest('.ldc-peek-x')) { hidePeek(); return; } setOpen(true); });
     btn.addEventListener('click', function () { setOpen(true); });
     root.querySelector('.ldc-x').addEventListener('click', function () { setOpen(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) setOpen(false); });
@@ -112,13 +122,21 @@
     open = v;
     root.classList.toggle('on', v);
     if (v) {
-      unread = 0; badge();
+      unread = 0; badge(); hidePeek();
+      if (state && lastAt) { state.seen = lastAt; save(state); }
       opened = Date.now();
       setTimeout(function () { var f = root.querySelector(state ? '.ldc-comp textarea' : '.ldc-f input'); if (f) f.focus(); }, 60);
       if (state) poll();
     }
     schedule();
   }
+
+  function showPeek(text) {
+    peek.querySelector('.ldc-peek-t').textContent = text;
+    peek.hidden = false;
+    requestAnimationFrame(function () { peek.classList.add('in'); });
+  }
+  function hidePeek() { if (!peek) return; peek.classList.remove('in'); peek.hidden = true; }
 
   function badge() {
     var n = unread > 9 ? '9+' : String(unread);
@@ -238,7 +256,11 @@
         var fresh = addMessages(r.body.messages);
         if (fresh) {
           if (visible) { state.seen = lastAt; save(state); }
-          else { unread += fresh; badge(); }
+          else {
+            unread += fresh; badge();
+            var latest = messages.filter(function (m) { return m.sender === 'admin'; }).pop();
+            if (latest && !open) showPeek(latest.body);
+          }
         }
         if (r.body.messages.length) render();
       })
