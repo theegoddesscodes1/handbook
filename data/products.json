@@ -810,21 +810,20 @@
       "minutes": 3,
       "icon": "pen",
       "headline": "Set up your basics, <i>once.</i>",
-      "intro": "A few settings make writing feel natural from the first page.",
+      "intro": "A few settings make writing feel natural from the first page. Everything else is already built in.",
       "clip": null,
       "clipNote": "Pen settings and palm rejection",
       "steps": {
         "default": [
-          "<b>Duplicate the planner</b> in your app and write in the copy, so you always have a clean original.",
           "<b>Turn on palm rejection</b> in your app's settings, then rest your hand on the screen normally.",
           "<b>Set your pen to about 0.7mm</b> and slow down slightly. Your digital handwriting improves faster than you think.",
-          "<b>Write your name</b> on the Info page."
+          "<b>Write your name</b> on the Info page.",
+          "<b>No copying pages needed.</b> All 12 months, 52 weeks and 365 days are already in your planner, dated or undated. Logs come with their own linked pages too, like a recipe log where every entry opens its own recipe page."
         ]
       },
       "tip": "Pressure sensitivity needs a pressure-sensitive stylus, like Apple Pencil or S Pen.",
       "undatedSteps": [
-        "<b>Choose your start month</b> and write it on the first monthly page.",
-        "<b>Fill in the dates</b> on the month, then on each week as you reach it."
+        "<b>Date your planner.</b> Pick the month you want to start with, write it at the top of the first monthly page and fill in that month's dates. Then date each week and day as you reach it, a few weeks ahead at most, so your planner stays flexible if plans change."
       ]
     },
     {
