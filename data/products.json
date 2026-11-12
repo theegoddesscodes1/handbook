@@ -617,11 +617,847 @@
       "edition": "2027 Edition",
       "type": "planner",
       "version": "dated",
-      "hidden": true,
+      "hidden": false,
       "image": "images/hero.jpg",
-      "description": "",
-      "pageGroups": [],
-      "pages": []
+      "description": "A 2027 business planner with six departments, from vision and strategy to finances, beside yearly, monthly, weekly and daily planning, all linked together.",
+      "pageGroups": [
+        {
+          "id": "start",
+          "name": "Start"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "departments",
+          "name": "Departments"
+        },
+        {
+          "id": "notes",
+          "name": "Notes"
+        }
+      ],
+      "pages": [
+        {
+          "id": "cover",
+          "name": "Cover",
+          "group": "start",
+          "image": "images/lagenda-2027/cover.jpg",
+          "about": "Where your planner opens, with a short note to come back to each quarter.",
+          "links": [
+            {
+              "x": 50.0,
+              "y": 6.9,
+              "label": "L'AGENDA title",
+              "goesTo": "The Index",
+              "text": "Tap the big title to go straight to the index."
+            },
+            {
+              "x": 90.9,
+              "y": 95.4,
+              "label": "LILAC DESK",
+              "goesTo": "The Lilac Desk shop",
+              "text": "Opens lilacdesk.com in your browser."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Getting in",
+              "text": "Tap the L'AGENDA title to open the index."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "name": "Business info",
+          "group": "start",
+          "image": "images/lagenda-2027/info.jpg",
+          "about": "Your name, your business details, and how to reach me.",
+          "links": [
+            {
+              "x": 65.4,
+              "y": 7.7,
+              "label": "L'AGENDA title",
+              "goesTo": "The Index",
+              "text": "The title in the dark band opens the index."
+            },
+            {
+              "x": 40.7,
+              "y": 90.0,
+              "label": "support@lilacdesk.com",
+              "goesTo": "A new email to me",
+              "text": "Opens an email to support@lilacdesk.com, for setup help or questions."
+            },
+            {
+              "x": 25.3,
+              "y": 95.0,
+              "label": "Lilacdesk.com",
+              "goesTo": "The Lilac Desk shop",
+              "text": "Opens lilacdesk.com in your browser."
+            },
+            {
+              "x": 47.0,
+              "y": 95.0,
+              "label": "Social buttons",
+              "goesTo": "My Pinterest, TikTok, Instagram and YouTube",
+              "text": "Each button opens that profile, so you can share your setup with #mylilacdesk."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Make it yours",
+              "text": "Write your name next to Founded by, and fill in your website, platform and business email so they are always one page away."
+            }
+          ]
+        },
+        {
+          "id": "index",
+          "name": "Index",
+          "group": "start",
+          "image": "images/lagenda-2027/index.jpg",
+          "about": "Your home base. Every section, and every page in it, is one tap from here.",
+          "links": [
+            {
+              "x": 18.4,
+              "y": 5.4,
+              "label": "INDEX title",
+              "goesTo": "The cover",
+              "text": "Tap the title to close the planner and go back to the cover."
+            },
+            {
+              "x": 91.9,
+              "y": 14.0,
+              "label": "CALENDAR",
+              "goesTo": "The yearly overview",
+              "text": "Opens the calendar, starting with the yearly overview."
+            },
+            {
+              "x": 57.2,
+              "y": 19.3,
+              "label": "Yearly Overview, Key Dates, Intentional Planning",
+              "goesTo": "That page",
+              "text": "Each line under Calendar opens its page."
+            },
+            {
+              "x": 38.9,
+              "y": 33.7,
+              "label": "Department names, 01 to 07",
+              "goesTo": "That department's opening page",
+              "text": "Tap a department name, like VISION AND STRATEGY, to open its section."
+            },
+            {
+              "x": 8.0,
+              "y": 41.5,
+              "label": "Every line under a department",
+              "goesTo": "That page",
+              "text": "Tap any line, like Annual Goals or Invoices, to go straight to it."
+            },
+            {
+              "x": 93.3,
+              "y": 88.9,
+              "label": "INBOX",
+              "goesTo": "The Inbox",
+              "text": "Your catch-all page for quick thoughts."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The cover",
+              "text": "On the index, the logo takes you back to the cover."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Lost?",
+              "text": "Tap the Lilac Desk logo at the bottom right of any page and you are back here."
+            },
+            {
+              "icon": "link",
+              "title": "Seven departments",
+              "text": "Vision & Strategy, Planning & Operations, Content & Marketing, Finances, Growth & Development, Business Resources and Notes."
+            }
+          ]
+        },
+        {
+          "id": "inbox",
+          "name": "Inbox",
+          "group": "start",
+          "image": "images/lagenda-2027/inbox.jpg",
+          "about": "Empty your head here first, then sort it out later.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 00 takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.7,
+              "label": "INDEX",
+              "goesTo": "The Index",
+              "text": "Back to the index."
+            },
+            {
+              "x": 14.9,
+              "y": 96.7,
+              "label": "CALENDAR",
+              "goesTo": "The yearly overview",
+              "text": "Opens the yearly overview."
+            },
+            {
+              "x": 29.8,
+              "y": 96.7,
+              "label": "INTENTIONAL PLANNING",
+              "goesTo": "Intentional Planning",
+              "text": "Opens the planning guide that comes before the calendar."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Sort it weekly",
+              "text": "Each week, move what is in the inbox to its real home: a task, a project or a date."
+            }
+          ]
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly overview",
+          "group": "calendar",
+          "image": "images/lagenda-2027/yearly.jpg",
+          "about": "All of 2027 at a glance, and the fastest way to any day.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big '27 takes you back to the index."
+            },
+            {
+              "x": 7.0,
+              "y": 13.3,
+              "label": "Month numbers, 01 to 12",
+              "goesTo": "That month's calendar",
+              "text": "Tap a month's number to open its monthly page."
+            },
+            {
+              "x": 5.1,
+              "y": 18.2,
+              "label": "Week numbers",
+              "goesTo": "That week's page",
+              "text": "The small W numbers beside each row open that week."
+            },
+            {
+              "x": 22.8,
+              "y": 17.2,
+              "label": "Every date",
+              "goesTo": "That day's page",
+              "text": "Tap any date to open its daily page."
+            },
+            {
+              "x": 5.9,
+              "y": 96.7,
+              "label": "INBOX, INTENTIONAL PLANNING, KEY DATES",
+              "goesTo": "That page",
+              "text": "The links along the bottom open each page."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Fastest route",
+              "text": "To reach any day of the year, start here and tap the date."
+            }
+          ]
+        },
+        {
+          "id": "keydates",
+          "name": "Key dates",
+          "group": "calendar",
+          "image": "images/lagenda-2027/keydates.jpg",
+          "about": "Launches, deadlines, events and renewals for the whole year in one place.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 00 takes you back to the index."
+            },
+            {
+              "x": 6.8,
+              "y": 15.3,
+              "label": "Month names",
+              "goesTo": "That month's calendar",
+              "text": "Each month name opens its monthly page."
+            },
+            {
+              "x": 14.9,
+              "y": 96.7,
+              "label": "INDEX and CALENDAR",
+              "goesTo": "The Index or the yearly overview",
+              "text": "The links along the bottom."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Use the key",
+              "text": "Mark each date with L for launch, E for event, D for deadline or R for renewal."
+            }
+          ]
+        },
+        {
+          "id": "month",
+          "name": "Month",
+          "group": "calendar",
+          "image": "images/lagenda-2027/month.jpg",
+          "about": "Your monthly calendar, with the month's numbers at the bottom.",
+          "links": [
+            {
+              "x": 6.1,
+              "y": 6.8,
+              "label": "Month number and name",
+              "goesTo": "The yearly overview",
+              "text": "The big number and the month name both open the yearly overview."
+            },
+            {
+              "x": 90.2,
+              "y": 7.8,
+              "label": "Small calendar, top right",
+              "goesTo": "The next month",
+              "text": "Tap the small calendar to jump to the month beside it."
+            },
+            {
+              "x": 5.8,
+              "y": 21.7,
+              "label": "W numbers",
+              "goesTo": "That week's page",
+              "text": "The week numbers down the left open each week."
+            },
+            {
+              "x": 65.0,
+              "y": 16.5,
+              "label": "Every date",
+              "goesTo": "That day's page",
+              "text": "Tap a date to open its daily page."
+            },
+            {
+              "x": 5.9,
+              "y": 96.7,
+              "label": "INBOX",
+              "goesTo": "The Inbox",
+              "text": "Capture a quick thought from any calendar page."
+            },
+            {
+              "x": 20.1,
+              "y": 96.7,
+              "label": "SOCIAL MEDIA ANALYTICS",
+              "goesTo": "This month's social media page",
+              "text": "Opens the social media analytics page for the month you are in."
+            },
+            {
+              "x": 38.5,
+              "y": 96.7,
+              "label": "QUARTERLY REVIEW",
+              "goesTo": "This quarter's review",
+              "text": "Opens the review for the quarter you are in, Q1 to Q4."
+            },
+            {
+              "x": 51.5,
+              "y": 96.7,
+              "label": "EXPENSES",
+              "goesTo": "This month's expenses",
+              "text": "Opens the expenses page for the month you are in."
+            },
+            {
+              "x": 65.2,
+              "y": 96.7,
+              "label": "MONTHLY ANALYTICS",
+              "goesTo": "This month's numbers",
+              "text": "Opens the monthly analytics page for the month you are in."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Plan the week",
+              "text": "Tap a W number to go from the month straight into that week."
+            },
+            {
+              "icon": "link",
+              "title": "The month's pages",
+              "text": "The links along the bottom always open the pages for the month you are in."
+            }
+          ]
+        },
+        {
+          "id": "week",
+          "name": "Week",
+          "group": "calendar",
+          "image": "images/lagenda-2027/week.jpg",
+          "about": "The week ahead: focus, numbers, habits, tasks and each day.",
+          "links": [
+            {
+              "x": 6.1,
+              "y": 6.8,
+              "label": "Month number and THE WEEK AHEAD",
+              "goesTo": "That month's calendar",
+              "text": "The big number and the title open the month this week belongs to."
+            },
+            {
+              "x": 54.6,
+              "y": 63.4,
+              "label": "Each day",
+              "goesTo": "That day's page",
+              "text": "Tap a day, like 01 FRI, to open its daily page."
+            },
+            {
+              "x": 5.9,
+              "y": 96.7,
+              "label": "INBOX",
+              "goesTo": "The Inbox",
+              "text": "Capture a quick thought from any calendar page."
+            },
+            {
+              "x": 20.1,
+              "y": 96.7,
+              "label": "SOCIAL MEDIA ANALYTICS",
+              "goesTo": "This month's social media page",
+              "text": "Opens the social media analytics page for the month you are in."
+            },
+            {
+              "x": 38.5,
+              "y": 96.7,
+              "label": "QUARTERLY REVIEW",
+              "goesTo": "This quarter's review",
+              "text": "Opens the review for the quarter you are in, Q1 to Q4."
+            },
+            {
+              "x": 51.5,
+              "y": 96.7,
+              "label": "EXPENSES",
+              "goesTo": "This month's expenses",
+              "text": "Opens the expenses page for the month you are in."
+            },
+            {
+              "x": 65.2,
+              "y": 96.7,
+              "label": "MONTHLY ANALYTICS",
+              "goesTo": "This month's numbers",
+              "text": "Opens the monthly analytics page for the month you are in."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Three things",
+              "text": "Fill in This week's focus first. Everything else on the page supports those three."
+            },
+            {
+              "icon": "link",
+              "title": "Days from last year",
+              "text": "Days from December 2026 at the start of week 1 have no daily pages, so they don't link."
+            }
+          ]
+        },
+        {
+          "id": "day",
+          "name": "Day",
+          "group": "calendar",
+          "image": "images/lagenda-2027/day.jpg",
+          "about": "Your schedule, today's three, tasks and the business pulse.",
+          "links": [
+            {
+              "x": 6.1,
+              "y": 6.8,
+              "label": "Month number and date",
+              "goesTo": "That month's calendar",
+              "text": "The big number and the date under the day open its month."
+            },
+            {
+              "x": 5.9,
+              "y": 14.5,
+              "label": "W numbers in the small calendar",
+              "goesTo": "That week's page",
+              "text": "Jump to any week of the month."
+            },
+            {
+              "x": 11.5,
+              "y": 16.5,
+              "label": "Dates in the small calendar",
+              "goesTo": "That day's page",
+              "text": "Jump to any other day of the month."
+            },
+            {
+              "x": 5.9,
+              "y": 96.7,
+              "label": "INBOX",
+              "goesTo": "The Inbox",
+              "text": "Capture a quick thought from any calendar page."
+            },
+            {
+              "x": 20.1,
+              "y": 96.7,
+              "label": "SOCIAL MEDIA ANALYTICS",
+              "goesTo": "This month's social media page",
+              "text": "Opens the social media analytics page for the month you are in."
+            },
+            {
+              "x": 38.5,
+              "y": 96.7,
+              "label": "QUARTERLY REVIEW",
+              "goesTo": "This quarter's review",
+              "text": "Opens the review for the quarter you are in, Q1 to Q4."
+            },
+            {
+              "x": 51.5,
+              "y": 96.7,
+              "label": "EXPENSES",
+              "goesTo": "This month's expenses",
+              "text": "Opens the expenses page for the month you are in."
+            },
+            {
+              "x": 65.2,
+              "y": 96.7,
+              "label": "MONTHLY ANALYTICS",
+              "goesTo": "This month's numbers",
+              "text": "Opens the monthly analytics page for the month you are in."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Today's three",
+              "text": "Pick three things, do the hardest one first."
+            },
+            {
+              "icon": "link",
+              "title": "Today is circled",
+              "text": "The circled date in the small calendar is the page you are on."
+            }
+          ]
+        },
+        {
+          "id": "department",
+          "name": "Department opener",
+          "group": "departments",
+          "image": "images/lagenda-2027/department.jpg",
+          "about": "Each of the seven departments opens with a page like this, listing everything inside.",
+          "links": [
+            {
+              "x": 24.1,
+              "y": 37.2,
+              "label": "Department name",
+              "goesTo": "The Index",
+              "text": "The name, like VISION & STRATEGY, takes you back to the index."
+            },
+            {
+              "x": 14.7,
+              "y": 70.2,
+              "label": "Each line, 01 to 06",
+              "goesTo": "That page",
+              "text": "Tap a line to open that part of the department."
+            },
+            {
+              "x": 12.7,
+              "y": 19.0,
+              "label": "Big department number",
+              "goesTo": "The cover",
+              "text": "The big number in the dark band takes you to the cover."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Inside a department",
+              "text": "On every page inside, the small number at the top left brings you back to this opener, and the big number takes you to the index."
+            }
+          ]
+        },
+        {
+          "id": "goals",
+          "name": "Annual goals",
+          "group": "departments",
+          "image": "images/lagenda-2027/goals.jpg",
+          "about": "One goal per page, measurable, with milestones for each quarter.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 01 takes you back to the index."
+            },
+            {
+              "x": 20.2,
+              "y": 6.3,
+              "label": "Small number and title",
+              "goesTo": "Vision & Strategy",
+              "text": "Opens the department's opening page."
+            },
+            {
+              "x": 6.6,
+              "y": 96.7,
+              "label": "GOAL 01 to GOAL 06",
+              "goesTo": "That goal's page",
+              "text": "Move between your six goal pages."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "One sentence",
+              "text": "Write each goal as one sentence with a number in it, then fill in How I'll measure it."
+            }
+          ]
+        },
+        {
+          "id": "projects",
+          "name": "Projects index",
+          "group": "departments",
+          "image": "images/lagenda-2027/projects.jpg",
+          "about": "Every project at a glance, each row linked to its own project page.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 02 takes you back to the index."
+            },
+            {
+              "x": 20.4,
+              "y": 6.3,
+              "label": "Small number and title",
+              "goesTo": "Planning & Operations",
+              "text": "Opens the department's opening page."
+            },
+            {
+              "x": 20.6,
+              "y": 16.9,
+              "label": "Each project row, 01 to 28",
+              "goesTo": "That project's page",
+              "text": "Tap a row to open its project overview, with the brief, deliverables, milestones and budget."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Back to the list",
+              "text": "On a project page, tap the title at the top to return to this index."
+            },
+            {
+              "icon": "pen",
+              "title": "Same idea elsewhere",
+              "text": "Campaigns, giveaways and events work the same way: an index where each row opens its own page."
+            }
+          ]
+        },
+        {
+          "id": "quarterly",
+          "name": "Quarterly review",
+          "group": "departments",
+          "image": "images/lagenda-2027/quarterly.jpg",
+          "about": "Three months of numbers, goals, wins and lessons on one page.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 04 takes you back to the index."
+            },
+            {
+              "x": 22.6,
+              "y": 6.3,
+              "label": "Small number and title",
+              "goesTo": "Finances",
+              "text": "Opens the department's opening page."
+            },
+            {
+              "x": 4.7,
+              "y": 96.7,
+              "label": "Q1 to Q4",
+              "goesTo": "That quarter's review",
+              "text": "Move between the four quarterly reviews."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Three questions",
+              "text": "What worked, what didn't, and what deserves the next ninety days."
+            }
+          ]
+        },
+        {
+          "id": "analytics",
+          "name": "Monthly analytics",
+          "group": "departments",
+          "image": "images/lagenda-2027/analytics.jpg",
+          "about": "The month in numbers: revenue, what moved it, and what to keep, fix and try.",
+          "links": [
+            {
+              "x": 6.8,
+              "y": 6.9,
+              "label": "Big page number",
+              "goesTo": "The Index",
+              "text": "The big 04 takes you back to the index."
+            },
+            {
+              "x": 89.2,
+              "y": 2.5,
+              "label": "JANUARY ANALYTICS, top right",
+              "goesTo": "That month's calendar",
+              "text": "Opens the monthly calendar for this month."
+            },
+            {
+              "x": 5.1,
+              "y": 96.7,
+              "label": "JAN to DEC",
+              "goesTo": "That month's analytics",
+              "text": "Move between months without leaving the page."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "From any calendar page",
+              "text": "MONTHLY ANALYTICS at the bottom of every calendar page opens the right month for you."
+            }
+          ]
+        },
+        {
+          "id": "notes",
+          "name": "Notes",
+          "group": "notes",
+          "image": "images/lagenda-2027/notes.jpg",
+          "about": "Five notebooks plus blank, grid and dotted templates.",
+          "links": [
+            {
+              "x": 14.7,
+              "y": 62.0,
+              "label": "Notebooks 01 to 05",
+              "goesTo": "That notebook",
+              "text": "Each notebook has ten pages for anything without a date."
+            },
+            {
+              "x": 14.8,
+              "y": 82.5,
+              "label": "BLANK, GRID and DOTTED TEMPLATE",
+              "goesTo": "That template",
+              "text": "Extra templates for sketches, layouts and lists."
+            },
+            {
+              "x": 10.5,
+              "y": 37.2,
+              "label": "NOTES",
+              "goesTo": "The Index",
+              "text": "Back to the index."
+            },
+            {
+              "x": 91.8,
+              "y": 97.3,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right of every page takes you back to the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Inside a notebook",
+              "text": "Tap the title at the top of a notebook page to come back here."
+            }
+          ]
+        }
+      ]
     },
     {
       "handle": "minimal-plans-2027",
