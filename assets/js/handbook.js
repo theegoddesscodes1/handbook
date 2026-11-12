@@ -141,9 +141,19 @@
   function loadChat() {
     if (window.__lilacChatLoaded) return;
     window.LilacChat = { button: false, openers: 'a[href*="/pages/contact"]' };
+    var wanted = false, failed = false;
+    // Catch clicks right away, even before the chat has finished loading, so no one is sent to the website.
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href*="/pages/contact"]');
+      if (!a || failed) return;
+      e.preventDefault();
+      if (window.LilacChat.open) window.LilacChat.open(); else wanted = true;
+    }, true);
     var s = document.createElement('script');
-    s.src = 'assets/js/lilac-chat.js';
+    s.src = 'assets/js/lilac-chat.js?v=4';
     s.async = true;
+    s.onload = function () { if (wanted && window.LilacChat.open) window.LilacChat.open(); };
+    s.onerror = function () { failed = true; if (wanted) location.href = D.site.contactUrl; };
     document.body.appendChild(s);
   }
 
