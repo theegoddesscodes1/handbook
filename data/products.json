@@ -590,11 +590,1172 @@
       "edition": "2027 Edition",
       "type": "planner",
       "version": "dated",
-      "hidden": true,
+      "hidden": false,
       "image": "images/hero.jpg",
-      "description": "",
-      "pageGroups": [],
-      "pages": []
+      "description": "A 2027 planner with yearly, monthly, weekly and daily pages, plus monthly finances, goals, wellness, reflection and a vision board, all linked together.",
+      "pageGroups": [
+        {
+          "id": "start",
+          "name": "Start"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "monthly",
+          "name": "Monthly essentials"
+        },
+        {
+          "id": "notes",
+          "name": "Notes"
+        }
+      ],
+      "pages": [
+        {
+          "id": "dashboard",
+          "name": "Planner Dashboard",
+          "group": "start",
+          "image": "images/the-elegance-hour/dashboard.jpg",
+          "about": "Your home page. Every section of the planner is one tap from here.",
+          "links": [
+            {
+              "x": 4.2,
+              "y": 14.7,
+              "label": "Calendar",
+              "goesTo": "The yearly overview",
+              "text": "Opens the full 2027 calendar."
+            },
+            {
+              "x": 3.4,
+              "y": 19.1,
+              "label": "Key Dates",
+              "goesTo": "Key Dates",
+              "text": "Opens the page for the year's important dates."
+            },
+            {
+              "x": 28.0,
+              "y": 22.6,
+              "label": "Q1 to Q4",
+              "goesTo": "That quarter's overview",
+              "text": "Each Q opens its own quarter page."
+            },
+            {
+              "x": 5.2,
+              "y": 26.2,
+              "label": "Yearly Breakdown",
+              "goesTo": "Yearly Breakdown",
+              "text": "Opens the month-by-month list view of the year."
+            },
+            {
+              "x": 52.2,
+              "y": 19.0,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 61.1,
+              "y": 19.0,
+              "label": "Icons beside each month",
+              "goesTo": "That month's finances, goals, wellness or reflection",
+              "text": "The four icons open that month's pages, in the same order as the icons at the top of every page."
+            },
+            {
+              "x": 90.9,
+              "y": 19.0,
+              "label": "Vision Board",
+              "goesTo": "That month's vision board",
+              "text": "Opens the vision board for that month."
+            },
+            {
+              "x": 1.8,
+              "y": 63.9,
+              "label": "Notebooks #1 to #9",
+              "goesTo": "That notebook",
+              "text": "Each line opens one of your nine notebooks. Write a title on the line so you know which is which."
+            },
+            {
+              "x": 43.6,
+              "y": 88.6,
+              "label": "Dotted Notebook / Grid Notebook",
+              "goesTo": "Dotted or grid paper",
+              "text": "The two lines at the bottom of the Notebooks list open the dotted and grid pages."
+            },
+            {
+              "x": 66.9,
+              "y": 63.9,
+              "label": "Personals #1 to #9",
+              "goesTo": "That personal page",
+              "text": "Nine blank pages for anything of your own: lists, plans, collections."
+            },
+            {
+              "x": 98.9,
+              "y": 3.0,
+              "label": "Menu lines, top of the tabs",
+              "goesTo": "The Planner Dashboard",
+              "text": "The three lines above the month tabs take you back to the dashboard from anywhere."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Name your notebooks",
+              "text": "Write a title on each notebook and personal line so the dashboard becomes your own index."
+            }
+          ]
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly Overview",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/yearly.jpg",
+          "about": "All twelve months of 2027 on one page.",
+          "links": [
+            {
+              "x": 9.0,
+              "y": 3.9,
+              "label": "Yearly Overview title",
+              "goesTo": "The Planner Dashboard",
+              "text": "The page title takes you back to the dashboard."
+            },
+            {
+              "x": 18.9,
+              "y": 6.9,
+              "label": "YEARLY BREAKDOWN / QUARTER OVERVIEW",
+              "goesTo": "Those pages",
+              "text": "Switch between the three year views from the top of the page."
+            },
+            {
+              "x": 13.7,
+              "y": 13.7,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 19.1,
+              "y": 19.9,
+              "label": "Every date",
+              "goesTo": "That day's page",
+              "text": "Tap any date to open its daily page."
+            },
+            {
+              "x": 2.9,
+              "y": 19.9,
+              "label": "W numbers",
+              "goesTo": "That week's page",
+              "text": "The week numbers beside each row open the weekly page."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Start here each week",
+              "text": "Tap the week you are in to open its weekly page, then work down to each day."
+            }
+          ]
+        },
+        {
+          "id": "keydates",
+          "name": "Key Dates",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/keydates.jpg",
+          "about": "One space per month for birthdays, deadlines and anything you can't miss.",
+          "links": [
+            {
+              "x": 6.1,
+              "y": 3.9,
+              "label": "Key Dates title",
+              "goesTo": "The Planner Dashboard",
+              "text": "The title takes you back to the dashboard."
+            },
+            {
+              "x": 6.2,
+              "y": 6.9,
+              "label": "YEARLY OVERVIEW / BREAKDOWN / QUARTER",
+              "goesTo": "Those pages",
+              "text": "Switch between the year views."
+            },
+            {
+              "x": 12.6,
+              "y": 12.4,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Fill this in first",
+              "text": "Add birthdays and fixed dates here before you start planning, so nothing sneaks up on you."
+            }
+          ]
+        },
+        {
+          "id": "quarter",
+          "name": "Quarter Overview",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/quarter.jpg",
+          "about": "Goals, tasks, deadlines and a review for each three-month stretch.",
+          "links": [
+            {
+              "x": 9.5,
+              "y": 3.9,
+              "label": "Quarter Overview title",
+              "goesTo": "The Planner Dashboard",
+              "text": "The title takes you back to the dashboard."
+            },
+            {
+              "x": 5.5,
+              "y": 6.9,
+              "label": "FIRST QUARTER",
+              "goesTo": "The yearly overview",
+              "text": "Opens the full year."
+            },
+            {
+              "x": 78.8,
+              "y": 8.6,
+              "label": "Q1 to Q4",
+              "goesTo": "That quarter",
+              "text": "Switch between the four quarter pages."
+            },
+            {
+              "x": 17.8,
+              "y": 12.4,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "breakdown",
+          "name": "Yearly Breakdown",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/breakdown.jpg",
+          "about": "Every day of the year as a list, six months to a page.",
+          "links": [
+            {
+              "x": 9.9,
+              "y": 3.9,
+              "label": "Yearly Breakdown title",
+              "goesTo": "The Planner Dashboard",
+              "text": "The title takes you back to the dashboard."
+            },
+            {
+              "x": 9.6,
+              "y": 10.8,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 95.6,
+              "y": 97.0,
+              "label": "Arrow, bottom right",
+              "goesTo": "July to December",
+              "text": "Turns to the second half of the year, and back again from there."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "month",
+          "name": "Month",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/month.jpg",
+          "about": "Your monthly calendar, with space for the month's focus, goals and notes.",
+          "links": [
+            {
+              "x": 2.9,
+              "y": 3.9,
+              "label": "Month number and name",
+              "goesTo": "The yearly overview",
+              "text": "The title opens the full year."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 21.9,
+              "y": 14.6,
+              "label": "Every date",
+              "goesTo": "That day's page",
+              "text": "Tap a date to open its daily page."
+            },
+            {
+              "x": 83.4,
+              "y": 97.0,
+              "label": "WEEK numbers, bottom right",
+              "goesTo": "That week's page",
+              "text": "Each WEEK opens that week's page."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 98.9,
+              "y": 3.0,
+              "label": "Menu lines, top of the tabs",
+              "goesTo": "The Planner Dashboard",
+              "text": "The three lines above the month tabs take you back to the dashboard from anywhere."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "The icons follow the month",
+              "text": "The icons at the top always open the pages for the month you are in, so February's icons open February's finances, goals and more."
+            }
+          ]
+        },
+        {
+          "id": "week",
+          "name": "Week",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/week.jpg",
+          "about": "Seven days on one page, with priorities, a to-do list, a habit tracker and notes.",
+          "links": [
+            {
+              "x": 2.9,
+              "y": 3.9,
+              "label": "Month number and name",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 4.9,
+              "y": 13.7,
+              "label": "Each day name",
+              "goesTo": "That day's page",
+              "text": "Tap the date and day name to open its daily page."
+            },
+            {
+              "x": 46.1,
+              "y": 97.1,
+              "label": "W numbers, bottom",
+              "goesTo": "Other weeks this month",
+              "text": "Jump between the weeks of the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 98.9,
+              "y": 3.0,
+              "label": "Menu lines, top of the tabs",
+              "goesTo": "The Planner Dashboard",
+              "text": "The three lines above the month tabs take you back to the dashboard from anywhere."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Weeks that cross months",
+              "text": "A week that starts in one month and ends in the next is in both months, so you can reach it from either."
+            }
+          ]
+        },
+        {
+          "id": "day",
+          "name": "Day",
+          "group": "calendar",
+          "image": "images/the-elegance-hour/day.jpg",
+          "about": "A page for every day: schedule from 5 am to 11 pm, top three priorities, to-do, gratitude, water and notes.",
+          "links": [
+            {
+              "x": 2.9,
+              "y": 3.9,
+              "label": "Month number and name",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 46.1,
+              "y": 97.1,
+              "label": "W numbers, bottom",
+              "goesTo": "That week's page",
+              "text": "Jump to any week of the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 98.9,
+              "y": 3.0,
+              "label": "Menu lines, top of the tabs",
+              "goesTo": "The Planner Dashboard",
+              "text": "The three lines above the month tabs take you back to the dashboard from anywhere."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Getting to a day",
+              "text": "Open a day from the monthly calendar, the weekly page or the yearly overview."
+            }
+          ]
+        },
+        {
+          "id": "finances",
+          "name": "Finances",
+          "group": "monthly",
+          "image": "images/the-elegance-hour/finances.jpg",
+          "about": "Income, budgets by category and a monthly summary of budget against actual.",
+          "links": [
+            {
+              "x": 5.7,
+              "y": 3.9,
+              "label": "Month and page title",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 10.3,
+              "y": 7.0,
+              "label": "Jan to Dec, under the title",
+              "goesTo": "The same page for another month",
+              "text": "Jump to this page for any month without going back to the calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "goals",
+          "name": "Goals",
+          "group": "monthly",
+          "image": "images/the-elegance-hour/goals.jpg",
+          "about": "Three goals a month, each with action steps, target dates and a progress tracker.",
+          "links": [
+            {
+              "x": 5.7,
+              "y": 3.9,
+              "label": "Month and page title",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 10.3,
+              "y": 7.0,
+              "label": "Jan to Dec, under the title",
+              "goesTo": "The same page for another month",
+              "text": "Jump to this page for any month without going back to the calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "wellness",
+          "name": "Wellness",
+          "group": "monthly",
+          "image": "images/the-elegance-hour/wellness.jpg",
+          "about": "Affirmations, self-care, a habit tracker, sleep, symptoms and supplements for the month.",
+          "links": [
+            {
+              "x": 5.7,
+              "y": 3.9,
+              "label": "Month and page title",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 10.3,
+              "y": 7.0,
+              "label": "Jan to Dec, under the title",
+              "goesTo": "The same page for another month",
+              "text": "Jump to this page for any month without going back to the calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "reflection",
+          "name": "Reflection",
+          "group": "monthly",
+          "image": "images/the-elegance-hour/reflection.jpg",
+          "about": "Highlights, achievements and a look back at how the month went.",
+          "links": [
+            {
+              "x": 5.7,
+              "y": 3.9,
+              "label": "Month and page title",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 10.3,
+              "y": 7.0,
+              "label": "Jan to Dec, under the title",
+              "goesTo": "The same page for another month",
+              "text": "Jump to this page for any month without going back to the calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "vision",
+          "name": "Vision Board",
+          "group": "monthly",
+          "image": "images/the-elegance-hour/vision.jpg",
+          "about": "An open page for each month to collect images, words and ideas.",
+          "links": [
+            {
+              "x": 5.7,
+              "y": 3.9,
+              "label": "Month and page title",
+              "goesTo": "That month",
+              "text": "The title opens this month's calendar."
+            },
+            {
+              "x": 10.3,
+              "y": 7.0,
+              "label": "Jan to Dec, under the title",
+              "goesTo": "The same page for another month",
+              "text": "Jump to this page for any month without going back to the calendar."
+            },
+            {
+              "x": 53.0,
+              "y": 4.6,
+              "label": "Piggy bank",
+              "goesTo": "This month's finances",
+              "text": "Opens the finances page for the month you are in."
+            },
+            {
+              "x": 58.9,
+              "y": 4.6,
+              "label": "Target",
+              "goesTo": "This month's goals",
+              "text": "Opens the goals page for the month you are in."
+            },
+            {
+              "x": 64.8,
+              "y": 4.6,
+              "label": "Heart",
+              "goesTo": "This month's wellness",
+              "text": "Opens the wellness page: affirmations, habits, sleep and more."
+            },
+            {
+              "x": 70.7,
+              "y": 4.6,
+              "label": "Speech bubble",
+              "goesTo": "This month's reflection",
+              "text": "Opens the reflection page for the month you are in."
+            },
+            {
+              "x": 76.6,
+              "y": 4.6,
+              "label": "Notebook",
+              "goesTo": "Notebook #1",
+              "text": "Opens your first notebook."
+            },
+            {
+              "x": 87.1,
+              "y": 4.6,
+              "label": "VISION BOARD",
+              "goesTo": "This month's vision board",
+              "text": "Opens the vision board for the month you are in."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Add your own images",
+              "text": "Paste photos or stickers onto the board with your app's image or sticker tool."
+            }
+          ]
+        },
+        {
+          "id": "routines",
+          "name": "Daily Routines",
+          "group": "notes",
+          "image": "images/the-elegance-hour/routines.jpg",
+          "about": "Morning, afternoon and evening routines, with a tick box for each day of the week.",
+          "links": [
+            {
+              "x": 6.2,
+              "y": 6.9,
+              "label": "YEARLY OVERVIEW / BREAKDOWN / QUARTER",
+              "goesTo": "Those pages",
+              "text": "Switch to the year views."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "personal",
+          "name": "Personals",
+          "group": "notes",
+          "image": "images/the-elegance-hour/personal.jpg",
+          "about": "Nine blank pages for anything of your own. Open them from the Personals list on the dashboard.",
+          "links": [
+            {
+              "x": 11.4,
+              "y": 4.5,
+              "label": "Top left",
+              "goesTo": "The Planner Dashboard",
+              "text": "Tap the top left corner to go back to the dashboard."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        },
+        {
+          "id": "notebook",
+          "name": "Notebook",
+          "group": "notes",
+          "image": "images/the-elegance-hour/notebook.jpg",
+          "about": "Nine lined notebooks of ten pages each.",
+          "links": [
+            {
+              "x": 6.2,
+              "y": 3.9,
+              "label": "Notebook title",
+              "goesTo": "The Planner Dashboard",
+              "text": "The title takes you back to the dashboard."
+            },
+            {
+              "x": 13.5,
+              "y": 6.6,
+              "label": "1 to 9, under the title",
+              "goesTo": "That notebook",
+              "text": "Jump straight to the first page of any of your nine notebooks."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Turning pages",
+              "text": "The links open the first page of each notebook. Scroll or swipe to reach the rest of its pages."
+            }
+          ]
+        },
+        {
+          "id": "dotted",
+          "name": "Dotted and grid paper",
+          "group": "notes",
+          "image": "images/the-elegance-hour/dotted.jpg",
+          "about": "Three dotted and three grid pages for sketches, layouts and lists.",
+          "links": [
+            {
+              "x": 4.7,
+              "y": 3.9,
+              "label": "Page title",
+              "goesTo": "The Planner Dashboard",
+              "text": "The title takes you back to the dashboard."
+            },
+            {
+              "x": 98.9,
+              "y": 18.9,
+              "label": "Month tabs, right edge",
+              "goesTo": "That month",
+              "text": "The JAN to DEC tabs on every page open each monthly calendar."
+            },
+            {
+              "x": 4.8,
+              "y": 97.0,
+              "label": "Lilac Desk logo",
+              "goesTo": "The Planner Dashboard",
+              "text": "The logo at the bottom left of every page also opens the dashboard."
+            }
+          ],
+          "tips": []
+        }
+      ],
+      "orientation": "landscape"
     },
     {
       "handle": "elegance-hour-undated",

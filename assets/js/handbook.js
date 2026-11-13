@@ -348,7 +348,7 @@
       '<button class="apl" aria-expanded="false" aria-controls="allpages">' + ic('grid', 15) + '<span>ALL PAGES</span></button></div>' +
       '<div class="apn" id="allpages" hidden><div class="apw">' + groups + '</div></div>' +
       '<p class="bd" style="margin:20px 0 0">' + esc(pg.about) + '</p>' +
-      '<section class="mg" style="margin-top:24px"><div class="card viewer"><div class="page"><img src="' + esc(pg.image) + '" alt="The ' + esc(pg.name) + ' page of ' + esc(p.name) + '">' + dots + '<div class="pop" hidden></div></div>' +
+      '<section class="mg' + (p.orientation === 'landscape' ? ' land' : '') + '" style="margin-top:24px"><div class="card viewer"><div class="page' + (p.orientation === 'landscape' ? ' land' : '') + '"><img src="' + esc(pg.image) + '" alt="The ' + esc(pg.name) + ' page of ' + esc(p.name) + '">' + dots + '<div class="pop" hidden></div></div>' +
       '<div style="margin-top:14px"><span class="cap" style="font-size:10px">' + (pg.links.length ? 'TAP A NUMBER TO SEE WHERE IT GOES' : 'NO LINKS ON THIS PAGE') + '</span></div></div>' +
       '<div class="card" style="overflow:hidden"><div style="padding:20px 22px 16px;display:flex;justify-content:space-between;align-items:baseline"><span class="lb">// LINKS ON THIS PAGE</span><span class="cap">' + pg.links.length + '</span></div>' +
       (rows || '<div style="padding:4px 22px 22px;font-size:14px;line-height:22px;color:var(--body)">' + esc(pg.tips[0] ? pg.tips[0].text : 'This page has no links.') + '</div>') + '</div></section>' +
