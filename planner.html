@@ -13,23 +13,20 @@
 <!-- Loads the newest Handbook files every time, so updates show right after GitHub publishes -->
 <script>window.HBV = Math.floor(Date.now() / 60000); document.write('<link rel="stylesheet" href="assets/css/handbook.css?v=' + window.HBV + '">');</script>
 <noscript><link rel="stylesheet" href="assets/css/handbook.css"></noscript>
-<!-- Analytics (GoatCounter, no cookies): counts each page per planner, e.g. /planner.html?p=the-archive -->
+<!-- Analytics (Umami, no cookies): page views per planner, plus Handbook clicks as named events -->
 <script>
-window.goatcounter = { path: function () {
-  var p = new URLSearchParams(location.search).get('p');
-  if (!p) { try { p = JSON.parse(localStorage.getItem('hb_product')); } catch (e) {} }
-  return location.pathname + (p ? '?p=' + p : '');
-} };
 window.hbTrack = function (name, data) {
   if (name === 'search') return; // typed searches fire on every keystroke, skip them
   try {
-    var parts = [name]; for (var k in (data || {})) parts.push(String(data[k]));
-    var p = new URLSearchParams(location.search).get('p'); if (p) parts.push(p);
-    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: parts.join(' / '), title: name, event: true });
+    var d = {}; for (var k in (data || {})) d[k] = String(data[k]).slice(0, 200);
+    var p = new URLSearchParams(location.search).get('p');
+    if (!p) { try { p = JSON.parse(localStorage.getItem('hb_product')); } catch (e) {} }
+    if (p) d.planner = p;
+    if (window.umami && window.umami.track) window.umami.track(name, d);
   } catch (e) {}
 };
 </script>
-<script data-goatcounter="https://lilacdesk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="7b0954ea-3201-42cd-af96-dba0755b734f"></script>
 </head>
 <body data-page="planner">
 <noscript><p style="padding:40px 24px;font-family:Georgia,serif">The Handbook needs JavaScript turned on. You can always reach me at <a href="https://lilacdesk.com/pages/contact">lilacdesk.com/pages/contact</a>.</p></noscript>
