@@ -2709,16 +2709,2265 @@
       ]
     },
     {
-      "handle": "minimal-plans-2027",
+      "handle": "minimal-plans",
+      "aliases": [
+        "minimal-plans-2027"
+      ],
       "name": "Minimal Plans",
       "edition": "2027 Edition",
       "type": "planner",
       "version": "dated",
-      "hidden": true,
+      "hidden": false,
       "image": "images/hero.jpg",
-      "description": "",
-      "pageGroups": [],
-      "pages": []
+      "description": "A complete 2027 planner: yearly, monthly, weekly and daily pages, a dashboard and five more pages for every month, seven life sections and five notebooks, all linked together.",
+      "editions": {
+        "undated": "minimal-plans-undated-edition"
+      },
+      "orientation": "landscape",
+      "pageGroups": [
+        {
+          "id": "start",
+          "name": "Start"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "monthly",
+          "name": "Every month"
+        },
+        {
+          "id": "sections",
+          "name": "Sections"
+        },
+        {
+          "id": "notes",
+          "name": "Notebooks"
+        }
+      ],
+      "pages": [
+        {
+          "id": "cover",
+          "name": "Cover",
+          "group": "start",
+          "image": "images/minimal-plans/cover.jpg",
+          "about": "The first page of your planner.",
+          "links": [
+            {
+              "x": 19.5,
+              "y": 79.9,
+              "label": "Minimal Plans title",
+              "goesTo": "The Index",
+              "text": "Tap the title to open the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Use reading mode to tap",
+              "text": "Links only work when your app is in reading or view mode, not while the pen is selected."
+            }
+          ]
+        },
+        {
+          "id": "index",
+          "name": "Index",
+          "group": "start",
+          "image": "images/minimal-plans/index.jpg",
+          "about": "Your home page. Every month, section and notebook is one tap from here.",
+          "links": [
+            {
+              "x": 7.3,
+              "y": 4.6,
+              "label": "Big I, top left",
+              "goesTo": "The cover",
+              "text": "The large letter in the corner opens the cover."
+            },
+            {
+              "x": 15.0,
+              "y": 16.6,
+              "label": "The Calendar",
+              "goesTo": "The yearly overview",
+              "text": "Opens the whole year on one page."
+            },
+            {
+              "x": 7.8,
+              "y": 29.1,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month under Year at a glance opens its monthly calendar."
+            },
+            {
+              "x": 38.8,
+              "y": 16.4,
+              "label": "Section titles",
+              "goesTo": "That section's overview",
+              "text": "Goals, Finances, Health and Wellness, Home, Travel, Personal and Notebooks each open a short overview of the section."
+            },
+            {
+              "x": 38.8,
+              "y": 26.1,
+              "label": "Page names",
+              "goesTo": "That page",
+              "text": "Every page listed under a section opens directly, like Annual Goals or Net Worth."
+            },
+            {
+              "x": 86.5,
+              "y": 68.5,
+              "label": "Notebook One to Five",
+              "goesTo": "That notebook",
+              "text": "Each notebook name opens its contents page."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Come back here often",
+              "text": "Every page has a way back: the big number in the corner, the INDEX button and the logo all return here."
+            }
+          ]
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly Overview",
+          "group": "calendar",
+          "image": "images/minimal-plans/yearly.jpg",
+          "about": "All twelve months of 2027 on one page.",
+          "links": [
+            {
+              "x": 12.9,
+              "y": 14.4,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 3.8,
+              "y": 20.0,
+              "label": "W 1 to W 5",
+              "goesTo": "That week's page",
+              "text": "The week labels beside each row open the weekly page."
+            },
+            {
+              "x": 36.4,
+              "y": 20.0,
+              "label": "Every date",
+              "goesTo": "That day's page",
+              "text": "Tap any date to open its daily page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Start each week here",
+              "text": "Tap the week label to jump straight to that week instead of paging through."
+            }
+          ]
+        },
+        {
+          "id": "month",
+          "name": "Monthly Calendar",
+          "group": "calendar",
+          "image": "images/minimal-plans/month.jpg",
+          "about": "Each month's calendar, focus and goals, with the month menu across the top.",
+          "links": [
+            {
+              "x": 11.6,
+              "y": 4.8,
+              "label": "Month title",
+              "goesTo": "The yearly overview",
+              "text": "The month name takes you back to the whole year."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.5,
+              "y": 23.1,
+              "label": "W 1 to W 5",
+              "goesTo": "That week's page",
+              "text": "The week labels down the left open each weekly page."
+            },
+            {
+              "x": 19.7,
+              "y": 39.0,
+              "label": "Every date",
+              "goesTo": "That day's page",
+              "text": "Each date opens its daily page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Tabbed version",
+              "text": "If you bought a tabbed planner, the month tabs down the right edge open each month from any page."
+            }
+          ]
+        },
+        {
+          "id": "week",
+          "name": "Weekly Page",
+          "group": "calendar",
+          "image": "images/minimal-plans/week.jpg",
+          "about": "The week at a glance, with priorities, a habit tracker, tasks and a grid for notes.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Week title",
+              "goesTo": "That month's calendar",
+              "text": "The week title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 5.8,
+              "y": 16.6,
+              "label": "Day names",
+              "goesTo": "That day's page",
+              "text": "Each day down the left opens its daily page."
+            },
+            {
+              "x": 50.0,
+              "y": 96.9,
+              "label": "W5 bar, bottom",
+              "goesTo": "The other weeks of the month",
+              "text": "The bar at the bottom moves between the weeks of the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Months stay together",
+              "text": "A week that runs across two months appears in both, so every month's weeks are complete."
+            }
+          ]
+        },
+        {
+          "id": "day",
+          "name": "Daily Page",
+          "group": "calendar",
+          "image": "images/minimal-plans/day.jpg",
+          "about": "A day with priorities, tasks, an hourly schedule and a notes grid, plus a small calendar of the month.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Day title",
+              "goesTo": "That month's calendar",
+              "text": "The day title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 19.4,
+              "y": 19.8,
+              "label": "Mini calendar dates",
+              "goesTo": "That day's page",
+              "text": "Tap any date in the small calendar to jump to that day."
+            },
+            {
+              "x": 4.1,
+              "y": 17.2,
+              "label": "W 1 to W 5",
+              "goesTo": "That week's page",
+              "text": "The week labels in the small calendar open each weekly page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Today's date is circled",
+              "text": "The small calendar marks the day you are on, so you always know where you are."
+            }
+          ]
+        },
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "group": "monthly",
+          "image": "images/minimal-plans/dashboard.jpg",
+          "about": "The start of every month: a calendar, week by week focus, key dates, the month in numbers and a habit tracker.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Dashboard title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 15.2,
+              "y": 19.6,
+              "label": "Calendar dates",
+              "goesTo": "That day's page",
+              "text": "Each day in the calendar opens its daily page."
+            },
+            {
+              "x": 39.1,
+              "y": 19.4,
+              "label": "Week by Week",
+              "goesTo": "That week's page",
+              "text": "Each week in the Week by Week list opens its weekly page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Plan the month here",
+              "text": "Fill in your word of the month, a focus for each week and the numbers you want to reach before the month begins."
+            }
+          ]
+        },
+        {
+          "id": "finance",
+          "name": "Finance Overview",
+          "group": "monthly",
+          "image": "images/minimal-plans/finance.jpg",
+          "about": "A monthly budget by category with planned, actual and difference, plus income allocation and sinking funds.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Plan, then check",
+              "text": "Fill in the Planned column at the start of the month and the Actual column at the end."
+            }
+          ]
+        },
+        {
+          "id": "spending",
+          "name": "Spending Log",
+          "group": "monthly",
+          "image": "images/minimal-plans/spending.jpg",
+          "about": "The month's budget and what is left, spending by category, a log of every purchase, and a Was It Worth It review.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Log as you go",
+              "text": "Add each purchase the same day so Left to Spend stays right."
+            }
+          ]
+        },
+        {
+          "id": "gratitude",
+          "name": "Daily Gratitude",
+          "group": "monthly",
+          "image": "images/minimal-plans/gratitude.jpg",
+          "about": "A line for every day, the people you are thankful for, prompts for hard days, and a look back at the month.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "One line a day",
+              "text": "Write one thing each night. It takes a minute and adds up over the year."
+            }
+          ]
+        },
+        {
+          "id": "workout",
+          "name": "Workout Log",
+          "group": "monthly",
+          "image": "images/minimal-plans/workout.jpg",
+          "about": "A row for every day: done, session, main focus, duration, effort, energy and notes.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Pair it with your plan",
+              "text": "Your Workout Plan in Health and Wellness sets the program; this page records each session."
+            }
+          ]
+        },
+        {
+          "id": "selfcare",
+          "name": "Self-Care",
+          "group": "monthly",
+          "image": "images/minimal-plans/selfcare.jpg",
+          "about": "A self-care idea for every day, your own self-care menu by time, a weekly plan, how you feel after, and what fills and drains you.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Build your menu",
+              "text": "Fill My Personal Menu with things that take five minutes, thirty minutes or a whole afternoon, then pick from it."
+            }
+          ]
+        },
+        {
+          "id": "section",
+          "name": "Section Overview",
+          "group": "sections",
+          "image": "images/minimal-plans/section.jpg",
+          "about": "Each section opens with an overview listing its pages. This is Goals; Finances, Health and Wellness, Home, Travel, Personal and Notebooks work the same way.",
+          "links": [
+            {
+              "x": 66.6,
+              "y": 22.8,
+              "label": "OPEN beside each page",
+              "goesTo": "That page",
+              "text": "Each line in the list opens its page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Seven sections",
+              "text": "Goals, Finances, Health and Wellness, Home, Travel, Personal and Notebooks."
+            }
+          ]
+        },
+        {
+          "id": "goals",
+          "name": "Annual Goals",
+          "group": "sections",
+          "image": "images/minimal-plans/goals.jpg",
+          "about": "Six goals for the year, each with its why, first steps and how you will measure it.",
+          "links": [
+            {
+              "x": 10.2,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Goals overview",
+              "text": "The title takes you back to the Goals section."
+            },
+            {
+              "x": 17.1,
+              "y": 26.5,
+              "label": "Goal numbers 01 to 06",
+              "goesTo": "That goal's breakdown",
+              "text": "Each number opens a full breakdown page for that goal."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Break it down",
+              "text": "Write the goal here, then tap its number to plan it step by step."
+            }
+          ]
+        },
+        {
+          "id": "recipes",
+          "name": "Recipe Book",
+          "group": "sections",
+          "image": "images/minimal-plans/recipes.jpg",
+          "about": "A list of 44 recipes, each linked to its own recipe card.",
+          "links": [
+            {
+              "x": 11.0,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Home overview",
+              "text": "The title takes you back to the Home section."
+            },
+            {
+              "x": 14.9,
+              "y": 19.7,
+              "label": "Recipe numbers 01 to 44",
+              "goesTo": "That recipe card",
+              "text": "Each number opens its own recipe card."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Name it here first",
+              "text": "Write the recipe name in the list, then tap the number to fill in the card."
+            }
+          ]
+        },
+        {
+          "id": "recipe",
+          "name": "Recipe Card",
+          "group": "sections",
+          "image": "images/minimal-plans/recipe.jpg",
+          "about": "One recipe: a photo, the details and times, dish type, ingredients and up to 26 steps.",
+          "links": [
+            {
+              "x": 10.9,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Home overview",
+              "text": "The title takes you back to the Home section."
+            },
+            {
+              "x": 93.1,
+              "y": 3.9,
+              "label": "Recipe Book, top right",
+              "goesTo": "The Recipe Book",
+              "text": "Returns to the list of all 44 recipes."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Logs link to their pages",
+              "text": "Like the recipe book, logs in the planner come with their own linked pages, so there is nothing to duplicate."
+            }
+          ]
+        },
+        {
+          "id": "bookshelf",
+          "name": "The Bookshelf",
+          "group": "sections",
+          "image": "images/minimal-plans/bookshelf.jpg",
+          "about": "Seven shelves with room for 28 books: author, genre, dates, format, rating and your thoughts.",
+          "links": [
+            {
+              "x": 12.1,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Personal overview",
+              "text": "The title takes you back to the Personal section."
+            },
+            {
+              "x": 45.2,
+              "y": 4.0,
+              "label": "SHELF 01 to 07",
+              "goesTo": "That shelf",
+              "text": "The bar at the top moves between the seven shelves."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Add a cover",
+              "text": "Paste a photo of the book cover into the Cover box."
+            }
+          ]
+        },
+        {
+          "id": "notebooks",
+          "name": "Notebooks",
+          "group": "notes",
+          "image": "images/minimal-plans/notebooks.jpg",
+          "about": "Five notebooks, each in its own style: lined, dot grid, meeting and class notes, Cornell, and brain dump.",
+          "links": [
+            {
+              "x": 66.6,
+              "y": 22.8,
+              "label": "OPEN beside each notebook",
+              "goesTo": "That notebook",
+              "text": "Each line opens the notebook's contents page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Twelve pages each",
+              "text": "Every notebook has twelve linked pages and a contents page."
+            }
+          ]
+        },
+        {
+          "id": "notebook-contents",
+          "name": "Notebook Contents",
+          "group": "notes",
+          "image": "images/minimal-plans/notebook-contents.jpg",
+          "about": "Each notebook's first page: what it is for and a contents list of its twelve pages.",
+          "links": [
+            {
+              "x": 50.0,
+              "y": 18.1,
+              "label": "Notebook number",
+              "goesTo": "The Notebooks overview",
+              "text": "The large number takes you back to the list of notebooks."
+            },
+            {
+              "x": 50.4,
+              "y": 47.0,
+              "label": "Contents 01 to 12",
+              "goesTo": "That page",
+              "text": "Each line opens its notebook page. Write a title on the line so you can find it again."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button opens the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Name each page",
+              "text": "Give each page a title in the contents so the notebook becomes its own index."
+            }
+          ]
+        },
+        {
+          "id": "notebook",
+          "name": "Notebook Page",
+          "group": "notes",
+          "image": "images/minimal-plans/notebook.jpg",
+          "about": "A page of Notebook One. The other four notebooks have their own paper styles.",
+          "links": [
+            {
+              "x": 19.3,
+              "y": 4.8,
+              "label": "Notebook title",
+              "goesTo": "The notebook contents",
+              "text": "The title takes you back to this notebook's contents."
+            },
+            {
+              "x": 47.8,
+              "y": 96.9,
+              "label": "Page bar 01 to 12",
+              "goesTo": "That page",
+              "text": "The bar at the bottom moves between the twelve pages."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "file",
+              "title": "Need more pages?",
+              "text": "Duplicate a notebook page in your app and keep the copy next to it. Links still point to the original."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "handle": "minimal-plans-undated-edition",
+      "name": "Minimal Plans",
+      "edition": "Undated",
+      "type": "planner",
+      "version": "undated",
+      "hidden": false,
+      "image": "images/hero.jpg",
+      "description": "Minimal Plans without printed dates: six weeks and 42 day pages in every month, so you can start whenever you like.",
+      "orientation": "landscape",
+      "pageGroups": [
+        {
+          "id": "start",
+          "name": "Start"
+        },
+        {
+          "id": "calendar",
+          "name": "Calendar"
+        },
+        {
+          "id": "monthly",
+          "name": "Every month"
+        },
+        {
+          "id": "sections",
+          "name": "Sections"
+        },
+        {
+          "id": "notes",
+          "name": "Notebooks"
+        }
+      ],
+      "pages": [
+        {
+          "id": "cover",
+          "name": "Cover",
+          "group": "start",
+          "image": "images/minimal-plans-undated/cover.jpg",
+          "about": "The first page of your planner.",
+          "links": [
+            {
+              "x": 19.5,
+              "y": 79.9,
+              "label": "Minimal Plans title",
+              "goesTo": "The Index",
+              "text": "Tap the title to open the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Use reading mode to tap",
+              "text": "Links only work when your app is in reading or view mode, not while the pen is selected."
+            }
+          ]
+        },
+        {
+          "id": "index",
+          "name": "Index",
+          "group": "start",
+          "image": "images/minimal-plans-undated/index.jpg",
+          "about": "Your home page. Every month, section and notebook is one tap from here.",
+          "links": [
+            {
+              "x": 7.3,
+              "y": 4.6,
+              "label": "Big I, top left",
+              "goesTo": "The cover",
+              "text": "The large letter in the corner opens the cover."
+            },
+            {
+              "x": 15.0,
+              "y": 16.6,
+              "label": "The Calendar",
+              "goesTo": "The yearly overview",
+              "text": "Opens the whole year on one page."
+            },
+            {
+              "x": 7.8,
+              "y": 29.1,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month under Year at a glance opens its monthly calendar."
+            },
+            {
+              "x": 38.8,
+              "y": 16.4,
+              "label": "Section titles",
+              "goesTo": "That section's overview",
+              "text": "Goals, Finances, Health and Wellness, Home, Travel, Personal and Notebooks each open a short overview of the section."
+            },
+            {
+              "x": 38.8,
+              "y": 26.1,
+              "label": "Page names",
+              "goesTo": "That page",
+              "text": "Every page listed under a section opens directly, like Annual Goals or Net Worth."
+            },
+            {
+              "x": 86.5,
+              "y": 68.5,
+              "label": "Notebook One to Five",
+              "goesTo": "That notebook",
+              "text": "Each notebook name opens its contents page."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Come back here often",
+              "text": "Every page has a way back: the big number in the corner, the INDEX button and the logo all return here."
+            }
+          ]
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly Overview",
+          "group": "calendar",
+          "image": "images/minimal-plans-undated/yearly.jpg",
+          "about": "All twelve months on one page, with a box for every day.",
+          "links": [
+            {
+              "x": 12.9,
+              "y": 14.4,
+              "label": "Month names",
+              "goesTo": "That month",
+              "text": "Each month name opens its monthly calendar."
+            },
+            {
+              "x": 3.8,
+              "y": 20.0,
+              "label": "W 1 to W 6",
+              "goesTo": "That week's page",
+              "text": "The week labels beside each row open the weekly page."
+            },
+            {
+              "x": 14.6,
+              "y": 19.8,
+              "label": "Every box",
+              "goesTo": "That day's page",
+              "text": "Every box in the grid opens its own daily page, so you can write the dates in and tap straight to the day."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "calendar",
+              "title": "Write in your dates",
+              "text": "Pick your start month and write the dates into the boxes. Each box already links to its own day."
+            }
+          ]
+        },
+        {
+          "id": "month",
+          "name": "Monthly Calendar",
+          "group": "calendar",
+          "image": "images/minimal-plans-undated/month.jpg",
+          "about": "Each month's calendar, focus and goals, with the month menu across the top.",
+          "links": [
+            {
+              "x": 11.6,
+              "y": 4.8,
+              "label": "Month title",
+              "goesTo": "The yearly overview",
+              "text": "The month name takes you back to the whole year."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.5,
+              "y": 21.8,
+              "label": "W 1 to W 6",
+              "goesTo": "That week's page",
+              "text": "The week labels down the left open each weekly page."
+            },
+            {
+              "x": 19.7,
+              "y": 35.0,
+              "label": "Every box",
+              "goesTo": "That day's page",
+              "text": "Each box opens its daily page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "calendar",
+              "title": "Six rows, every month",
+              "text": "Undated months have six weeks and 42 day boxes, so any month fits, whichever day it starts on."
+            },
+            {
+              "icon": "link",
+              "title": "Tabbed version",
+              "text": "If you bought a tabbed planner, the month tabs down the right edge open each month from any page."
+            }
+          ]
+        },
+        {
+          "id": "week",
+          "name": "Weekly Page",
+          "group": "calendar",
+          "image": "images/minimal-plans-undated/week.jpg",
+          "about": "The week at a glance, with priorities, a habit tracker, tasks and a grid for notes.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Week title",
+              "goesTo": "That month's calendar",
+              "text": "The week title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 5.8,
+              "y": 17.0,
+              "label": "Day names",
+              "goesTo": "That day's page",
+              "text": "Each day down the left opens its daily page."
+            },
+            {
+              "x": 47.3,
+              "y": 96.9,
+              "label": "W6 bar, bottom",
+              "goesTo": "The other weeks of the month",
+              "text": "The bar at the bottom moves between the weeks of the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "calendar",
+              "title": "Date the week",
+              "text": "Write the dates beside each day as you reach the week."
+            }
+          ]
+        },
+        {
+          "id": "day",
+          "name": "Daily Page",
+          "group": "calendar",
+          "image": "images/minimal-plans-undated/day.jpg",
+          "about": "A day with a Today section, priorities, tasks, an hourly schedule and a notes grid.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Day title",
+              "goesTo": "That month's calendar",
+              "text": "The day title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Write the date in Today",
+              "text": "The Today section at the top has a line for the date, so you can date each page as you use it."
+            }
+          ]
+        },
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "group": "monthly",
+          "image": "images/minimal-plans-undated/dashboard.jpg",
+          "about": "The start of every month: a calendar, week by week focus, key dates, the month in numbers and a habit tracker.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Dashboard title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 11.6,
+              "y": 20.1,
+              "label": "Calendar boxes",
+              "goesTo": "That day's page",
+              "text": "Each day in the calendar opens its daily page."
+            },
+            {
+              "x": 39.1,
+              "y": 19.4,
+              "label": "Week by Week",
+              "goesTo": "That week's page",
+              "text": "Each week in the Week by Week list opens its weekly page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Plan the month here",
+              "text": "Fill in your word of the month, a focus for each week and the numbers you want to reach before the month begins."
+            }
+          ]
+        },
+        {
+          "id": "finance",
+          "name": "Finance Overview",
+          "group": "monthly",
+          "image": "images/minimal-plans-undated/finance.jpg",
+          "about": "A monthly budget by category with planned, actual and difference, plus income allocation and sinking funds.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Plan, then check",
+              "text": "Fill in the Planned column at the start of the month and the Actual column at the end."
+            }
+          ]
+        },
+        {
+          "id": "spending",
+          "name": "Spending Log",
+          "group": "monthly",
+          "image": "images/minimal-plans-undated/spending.jpg",
+          "about": "The month's budget and what is left, spending by category, a log of every purchase, and a Was It Worth It review.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Log as you go",
+              "text": "Add each purchase the same day so Left to Spend stays right."
+            }
+          ]
+        },
+        {
+          "id": "gratitude",
+          "name": "Daily Gratitude",
+          "group": "monthly",
+          "image": "images/minimal-plans-undated/gratitude.jpg",
+          "about": "A line for every day, the people you are thankful for, prompts for hard days, and a look back at the month.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "One line a day",
+              "text": "Write one thing each night. It takes a minute and adds up over the year."
+            }
+          ]
+        },
+        {
+          "id": "workout",
+          "name": "Workout Log",
+          "group": "monthly",
+          "image": "images/minimal-plans-undated/workout.jpg",
+          "about": "A row for every day: done, session, main focus, duration, effort, energy and notes.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Pair it with your plan",
+              "text": "Your Workout Plan in Health and Wellness sets the program; this page records each session."
+            }
+          ]
+        },
+        {
+          "id": "selfcare",
+          "name": "Self-Care",
+          "group": "monthly",
+          "image": "images/minimal-plans-undated/selfcare.jpg",
+          "about": "A self-care idea for every day, your own self-care menu by time, a weekly plan, how you feel after, and what fills and drains you.",
+          "links": [
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "Page title",
+              "goesTo": "That month's calendar",
+              "text": "The title takes you back to the month."
+            },
+            {
+              "x": 35.3,
+              "y": 4.0,
+              "label": "CALENDAR",
+              "goesTo": "That month's calendar",
+              "text": "The first button in the menu at the top opens the monthly calendar."
+            },
+            {
+              "x": 64.4,
+              "y": 4.0,
+              "label": "Month menu",
+              "goesTo": "That month's other pages",
+              "text": "Dashboard, Finance Overview, Spending Log, Daily Gratitude, Workout Log and Self-Care each open that page for the same month."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Build your menu",
+              "text": "Fill My Personal Menu with things that take five minutes, thirty minutes or a whole afternoon, then pick from it."
+            }
+          ]
+        },
+        {
+          "id": "section",
+          "name": "Section Overview",
+          "group": "sections",
+          "image": "images/minimal-plans-undated/section.jpg",
+          "about": "Each section opens with an overview listing its pages. This is Goals; Finances, Health and Wellness, Home, Travel, Personal and Notebooks work the same way.",
+          "links": [
+            {
+              "x": 66.6,
+              "y": 22.8,
+              "label": "OPEN beside each page",
+              "goesTo": "That page",
+              "text": "Each line in the list opens its page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Seven sections",
+              "text": "Goals, Finances, Health and Wellness, Home, Travel, Personal and Notebooks."
+            }
+          ]
+        },
+        {
+          "id": "goals",
+          "name": "Annual Goals",
+          "group": "sections",
+          "image": "images/minimal-plans-undated/goals.jpg",
+          "about": "Six goals for the year, each with its why, first steps and how you will measure it.",
+          "links": [
+            {
+              "x": 10.2,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Goals overview",
+              "text": "The title takes you back to the Goals section."
+            },
+            {
+              "x": 17.1,
+              "y": 26.5,
+              "label": "Goal numbers 01 to 06",
+              "goesTo": "That goal's breakdown",
+              "text": "Each number opens a full breakdown page for that goal."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Break it down",
+              "text": "Write the goal here, then tap its number to plan it step by step."
+            }
+          ]
+        },
+        {
+          "id": "recipes",
+          "name": "Recipe Book",
+          "group": "sections",
+          "image": "images/minimal-plans-undated/recipes.jpg",
+          "about": "A list of 44 recipes, each linked to its own recipe card.",
+          "links": [
+            {
+              "x": 11.0,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Home overview",
+              "text": "The title takes you back to the Home section."
+            },
+            {
+              "x": 14.9,
+              "y": 19.7,
+              "label": "Recipe numbers 01 to 44",
+              "goesTo": "That recipe card",
+              "text": "Each number opens its own recipe card."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Name it here first",
+              "text": "Write the recipe name in the list, then tap the number to fill in the card."
+            }
+          ]
+        },
+        {
+          "id": "recipe",
+          "name": "Recipe Card",
+          "group": "sections",
+          "image": "images/minimal-plans-undated/recipe.jpg",
+          "about": "One recipe: a photo, the details and times, dish type, ingredients and up to 26 steps.",
+          "links": [
+            {
+              "x": 10.9,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Home overview",
+              "text": "The title takes you back to the Home section."
+            },
+            {
+              "x": 93.1,
+              "y": 3.9,
+              "label": "Recipe Book, top right",
+              "goesTo": "The Recipe Book",
+              "text": "Returns to the list of all 44 recipes."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Logs link to their pages",
+              "text": "Like the recipe book, logs in the planner come with their own linked pages, so there is nothing to duplicate."
+            }
+          ]
+        },
+        {
+          "id": "bookshelf",
+          "name": "The Bookshelf",
+          "group": "sections",
+          "image": "images/minimal-plans-undated/bookshelf.jpg",
+          "about": "Seven shelves with room for 28 books: author, genre, dates, format, rating and your thoughts.",
+          "links": [
+            {
+              "x": 12.1,
+              "y": 4.8,
+              "label": "Page title",
+              "goesTo": "The Personal overview",
+              "text": "The title takes you back to the Personal section."
+            },
+            {
+              "x": 45.2,
+              "y": 4.0,
+              "label": "SHELF 01 to 07",
+              "goesTo": "That shelf",
+              "text": "The bar at the top moves between the seven shelves."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Add a cover",
+              "text": "Paste a photo of the book cover into the Cover box."
+            }
+          ]
+        },
+        {
+          "id": "notebooks",
+          "name": "Notebooks",
+          "group": "notes",
+          "image": "images/minimal-plans-undated/notebooks.jpg",
+          "about": "Five notebooks, each in its own style: lined, dot grid, meeting and class notes, Cornell, and brain dump.",
+          "links": [
+            {
+              "x": 66.6,
+              "y": 22.8,
+              "label": "OPEN beside each notebook",
+              "goesTo": "That notebook",
+              "text": "Each line opens the notebook's contents page."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Twelve pages each",
+              "text": "Every notebook has twelve linked pages and a contents page."
+            }
+          ]
+        },
+        {
+          "id": "notebook-contents",
+          "name": "Notebook Contents",
+          "group": "notes",
+          "image": "images/minimal-plans-undated/notebook-contents.jpg",
+          "about": "Each notebook's first page: what it is for and a contents list of its twelve pages.",
+          "links": [
+            {
+              "x": 50.0,
+              "y": 18.1,
+              "label": "Notebook number",
+              "goesTo": "The Notebooks overview",
+              "text": "The large number takes you back to the list of notebooks."
+            },
+            {
+              "x": 50.4,
+              "y": 47.0,
+              "label": "Contents 01 to 12",
+              "goesTo": "That page",
+              "text": "Each line opens its notebook page. Write a title on the line so you can find it again."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button opens the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Name each page",
+              "text": "Give each page a title in the contents so the notebook becomes its own index."
+            }
+          ]
+        },
+        {
+          "id": "notebook",
+          "name": "Notebook Page",
+          "group": "notes",
+          "image": "images/minimal-plans-undated/notebook.jpg",
+          "about": "A page of Notebook One. The other four notebooks have their own paper styles.",
+          "links": [
+            {
+              "x": 19.3,
+              "y": 4.8,
+              "label": "Notebook title",
+              "goesTo": "The notebook contents",
+              "text": "The title takes you back to this notebook's contents."
+            },
+            {
+              "x": 47.8,
+              "y": 96.9,
+              "label": "Page bar 01 to 12",
+              "goesTo": "That page",
+              "text": "The bar at the bottom moves between the twelve pages."
+            },
+            {
+              "x": 3.4,
+              "y": 4.9,
+              "label": "Big page number, top left",
+              "goesTo": "The Index",
+              "text": "The large number in the corner takes you back to the index."
+            },
+            {
+              "x": 5.9,
+              "y": 96.9,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 94.4,
+              "y": 96.7,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "file",
+              "title": "Need more pages?",
+              "text": "Duplicate a notebook page in your app and keep the copy next to it. Links still point to the original."
+            }
+          ]
+        }
+      ]
     },
     {
       "handle": "the-atelier",

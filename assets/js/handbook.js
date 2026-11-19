@@ -79,8 +79,12 @@
     var visible = D.products.filter(function (p) { return !p.hidden; });
     // a product is found by its current Shopify handle or any old one listed in "aliases"
     var find = function (h) { return D.products.filter(function (p) { return !p.hidden && (p.handle === h || (p.aliases || []).indexOf(h) !== -1); })[0]; };
-    if (handle && find(handle)) store('product', find(handle).handle);
-    state.product = find(handle) || find(store('product')) || null;
+    // one Shopify product can hold several editions (Minimal Plans: dated and undated);
+    // the email adds &v=undated and "editions" points to that edition's own entry
+    var v = qs('v');
+    var pick = function (p) { return p && v && p.editions && p.editions[v] ? (find(p.editions[v]) || p) : p; };
+    if (handle && find(handle)) store('product', pick(find(handle)).handle);
+    state.product = pick(find(handle)) || find(store('product')) || null;
     if (!state.product && visible.length === 1) state.product = visible[0];
     var dv = store('device') || {};
     state.device = dv.device || 'ipad';
