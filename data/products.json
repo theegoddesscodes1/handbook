@@ -5025,6 +5025,565 @@
       "pages": []
     },
     {
+      "handle": "the-everything-notebook",
+      "aliases": [
+        "everything-notebook"
+      ],
+      "name": "The Everything Notebook",
+      "edition": "Digital notebook",
+      "type": "notebook",
+      "version": "undated",
+      "hidden": false,
+      "image": "images/hero.jpg",
+      "description": "Twelve sections, each with its own kind of paper and a contents page, 374 pages linked together.",
+      "pageGroups": [
+        {
+          "id": "start",
+          "name": "Start"
+        },
+        {
+          "id": "sections",
+          "name": "Sections"
+        },
+        {
+          "id": "paper",
+          "name": "Paper"
+        },
+        {
+          "id": "templates",
+          "name": "Templates"
+        }
+      ],
+      "pages": [
+        {
+          "id": "cover",
+          "name": "Cover",
+          "group": "start",
+          "image": "images/everything-notebook/cover.jpg",
+          "about": "The first page of your notebook.",
+          "links": [
+            {
+              "x": 50.0,
+              "y": 63.0,
+              "label": "The cover",
+              "goesTo": "The Index",
+              "text": "Tap anywhere on the cover to open the index."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Use reading mode to tap",
+              "text": "Links only work when your app is in reading or view mode, not while the pen is selected."
+            }
+          ]
+        },
+        {
+          "id": "index",
+          "name": "Index",
+          "group": "start",
+          "image": "images/everything-notebook/index.jpg",
+          "about": "Your home page. All twelve sections are one tap from here, with space for your name, dates and notes.",
+          "links": [
+            {
+              "x": 16.1,
+              "y": 10.8,
+              "label": "Section names",
+              "goesTo": "That section's contents",
+              "text": "Each row opens the contents page at the start of that section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "You are here. The same button sits on every page."
+            },
+            {
+              "x": 15.9,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section from any page."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo opens the index from every page."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Make it yours",
+              "text": "Write your name, the date you started and anything you want close at hand in the notes."
+            }
+          ]
+        },
+        {
+          "id": "section",
+          "name": "Section Contents",
+          "group": "sections",
+          "image": "images/everything-notebook/section-contents.jpg",
+          "about": "Every section opens on its own contents page, with a row for each of its 30 pages.",
+          "links": [
+            {
+              "x": 25.4,
+              "y": 14.8,
+              "label": "Every row",
+              "goesTo": "That page",
+              "text": "Row 01 opens page 1 of the section, row 02 page 2, and so on."
+            },
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 34.6,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Fill it in as you go",
+              "text": "Each time you start a page, write its title, date and a tag or two in its row. Any note is then two taps from the index."
+            }
+          ]
+        },
+        {
+          "id": "lined",
+          "name": "Lined",
+          "group": "paper",
+          "image": "images/everything-notebook/lined.jpg",
+          "about": "Lined pages with a subject and date at the top. Used in Work, Personal, Travel and Finances.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 15.9,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Back to this section",
+              "text": "Tap the section name at the top to return to its contents page and pick another page."
+            }
+          ]
+        },
+        {
+          "id": "grid",
+          "name": "Grid",
+          "group": "paper",
+          "image": "images/everything-notebook/grid.jpg",
+          "about": "Grid pages for plans, tables and sketches. Used in Projects.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 28.4,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Back to this section",
+              "text": "Tap the section name at the top to return to its contents page and pick another page."
+            }
+          ]
+        },
+        {
+          "id": "dotted",
+          "name": "Dot Grid",
+          "group": "paper",
+          "image": "images/everything-notebook/dotted.jpg",
+          "about": "Dot grid pages for ideas, lists and mind maps. Used in Ideas and in Health and Wellness.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 40.9,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Back to this section",
+              "text": "Tap the section name at the top to return to its contents page and pick another page."
+            }
+          ]
+        },
+        {
+          "id": "blank",
+          "name": "Blank",
+          "group": "paper",
+          "image": "images/everything-notebook/blank.jpg",
+          "about": "Blank pages for anything at all. Used in Miscellaneous.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 84.5,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Back to this section",
+              "text": "Tap the section name at the top to return to its contents page and pick another page."
+            }
+          ]
+        },
+        {
+          "id": "meeting",
+          "name": "Meeting Notes",
+          "group": "templates",
+          "image": "images/everything-notebook/meeting.jpg",
+          "about": "Meeting details, an agenda, notes, action items with an owner and due date, and decisions and follow-ups. Used in Meetings.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 34.6,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Tick off action items",
+              "text": "The DONE column has a box for each task, so the page doubles as your follow-up list."
+            }
+          ]
+        },
+        {
+          "id": "cornell",
+          "name": "Cornell Notes",
+          "group": "templates",
+          "image": "images/everything-notebook/cornell.jpg",
+          "about": "Cues and questions on the left, notes on the right and a summary at the bottom. Used in Learning.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 78.2,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Summarise last",
+              "text": "Take notes during the class, add cues and questions afterwards, then write the summary in your own words."
+            }
+          ]
+        },
+        {
+          "id": "recipe",
+          "name": "Recipe",
+          "group": "templates",
+          "image": "images/everything-notebook/recipe.jpg",
+          "about": "Servings, prep and cook time, an ingredients list, the method and notes. Used in Recipes.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 53.3,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "pen",
+              "title": "Name it in the contents",
+              "text": "Write the dish in the Recipes contents page so the whole section works like a recipe index."
+            }
+          ]
+        },
+        {
+          "id": "reading",
+          "name": "Reading Notes",
+          "group": "templates",
+          "image": "images/everything-notebook/reading.jpg",
+          "about": "The book, your thoughts and rating, the best part, who to recommend it to and quotes to keep. Used in Reading.",
+          "links": [
+            {
+              "x": 4.3,
+              "y": 3.7,
+              "label": "Big number, top left",
+              "goesTo": "The Index",
+              "text": "The section number in the corner takes you back to the index."
+            },
+            {
+              "x": 12.2,
+              "y": 3.5,
+              "label": "Section name",
+              "goesTo": "That section's contents",
+              "text": "The section name at the top opens the contents page for this section."
+            },
+            {
+              "x": 7.6,
+              "y": 97.8,
+              "label": "INDEX button",
+              "goesTo": "The Index",
+              "text": "The black INDEX button at the bottom left of every page opens the index."
+            },
+            {
+              "x": 47.1,
+              "y": 97.8,
+              "label": "01 to 12",
+              "goesTo": "That section",
+              "text": "The numbers along the bottom open each section. The one underlined is the section you are in."
+            },
+            {
+              "x": 92.3,
+              "y": 98.0,
+              "label": "lilac desk logo",
+              "goesTo": "The Index",
+              "text": "The logo at the bottom right opens the index too."
+            }
+          ],
+          "tips": [
+            {
+              "icon": "link",
+              "title": "Back to this section",
+              "text": "Tap the section name at the top to return to its contents page and pick another page."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "handle": "a-retenir-notebook",
       "aliases": [
         "a-retenir"
